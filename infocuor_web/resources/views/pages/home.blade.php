@@ -38,7 +38,7 @@
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-      
+
 
         .hero-text button {
             margin: 10px;
@@ -157,7 +157,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-   
+
 }
 
 .footer-stats div {
@@ -194,7 +194,7 @@
     color: #007bff; /* Change text color on hover */
 }
 
-        
+
 
         .contact-info p {
             margin: 0;
@@ -259,21 +259,21 @@
 
 
 
-       
+
     </style>
 
 
 
 @endpush
 
-@section('content')
-    
+    @section('slider')
+
     {{-- Devolop your all content on between this section in the Home page --}}
 
     <section id="hero">
-    <img class="d-block w-100" src="{{ asset('images/mainHome.jpg') }}" alt="Hero Image">
-    
-    
+    <img class="d-block w-100" src="{{ asset('images/mainHome.jpg') }}" alt="Hero Image" width="100%" height="715px">
+     @endsection
+    @section('content')
     <div class="hero-text">
     <h1 class="hero-title">Welcome to Infocure</h1>
     <p class="hero-subtitle">Moments captured with precision and passion</p>
@@ -308,8 +308,8 @@
 
 <section id="about">
     <h2>About Us</h2>
-    
-<p>Infocuor is the Photography Society of 
+
+<p>Infocuor is the Photography Society of
 faculty of Science, University Of Ruhuna
 which mainly founded to inspire the undergraduates
 to uplift the spirit by spreading and promoting creativity
@@ -349,7 +349,7 @@ of University Students.</p>
         <p>Active Crew</p>
         </div>
         </div>
-    
+
     <div class="contact-info">
         <p>Phone: (+94) 76 584 5651</p>
         <p>Email: infocour@usci.ruh.ac.lk</p>
