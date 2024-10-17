@@ -54,7 +54,7 @@
 <nav class="navbar navbar-expand-md shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="{{ asset('images/infocuor_logo.png') }}" alt="Logo"
-                style="width: 150px;"></a>
+                style="width: 130px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link active custom-navbar-text" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active custom-navbar-text" aria-current="page" href="home.blade.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link custom-navbar-text" href="#">About</a>
@@ -71,7 +71,7 @@
                     <a class="nav-link custom-navbar-text" href="#">History</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text" href="#">Membership</a>
+                    <a class="nav-link custom-navbar-text" href="membership.blade.php">Membership</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link custom-navbar-text" href="#">Hire</a>
