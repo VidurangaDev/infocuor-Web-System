@@ -31,11 +31,53 @@
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
+    .hero-text span {
+      display: inline-block;
+      animation: bounce 1s ease infinite alternate;
+    }
+
+    .hero-text span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .hero-text span:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .hero-text span:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .hero-text span:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .hero-text span:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+
+    .hero-text span:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+
+    .hero-text span:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-20px);
+      }
+    }
+
         .hero-subtitle {
     font-size: 24px;
     color: white;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1.3);
     }
 
 
@@ -46,33 +88,16 @@
             font-size: 18px;
             border: none;
             border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .hero-text .hire-btn {
-            position: absolute;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            background-color: #6c757d;
-            color: white;
-            transition: transform 0.2s, background-color 0.3s ease;
-            background-color: #007bff;
-            color: white;
-        }
-
-        .hero-text .login-btn {
-           position: absolute;
-             padding: 10px 20px;
-             border: none;
-             border-radius: 5px;
-             font-size: 16px;
-            background-color: grey;
-             color: white;
-            transition: transform 0.2s, background-color 0.3s ease;
+            cursor: pointer; 
             
         }
+
+       
+        .button-container {
+      display: center;
+      gap: 1000px; /* Adds space between buttons */
+        }
+        
         .hire-btn:hover {
             background-color: #007bff;
             transform: scale(1.1); /* Make button slightly bigger on hover */
@@ -370,6 +395,123 @@
             font-weight: bold;
             font-size: 12px;
         }
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the slider */
+.slider {
+    width: 100%;
+    height: 715px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container for the slides */
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: slideAnimation 20s infinite;
+}
+
+/* Individual slide styling */
+.slide {
+    width: 100%;
+    transition: 0.6s ease;
+}
+
+/* Hides all input radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Manual navigation styling */
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.manual-btn:hover {
+    background-color: #fff;
+}
+
+/* Automatic navigation styling */
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.navigation-auto div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 5px;
+    animation: move 20s infinite;
+}
+
+/* Keyframes for the automatic sliding */
+@keyframes slideAnimation {
+    0% { margin-left: 0; }
+    20% { margin-left: 0; }
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+    95% { margin-left: -300%; }
+    100% { margin-left: 0; }
+}
+
+/* Keyframes for automatic navigation dots */
+@keyframes move {
+    0%, 20% { background-color: #fff; }
+    25%, 45% { background-color: #fff; }
+    50%, 70% { background-color: #fff; }
+    75%, 100% { background-color: #fff; }
+}
+
+/* Targeting checked input states to control manual slide change */
+#radio1:checked ~ .slides {
+    margin-left: 0;
+}
+#radio2:checked ~ .slides {
+    margin-left: -100%;
+}
+#radio3:checked ~ .slides {
+    margin-left: -200%;
+}
+#radio4:checked ~ .slides {
+    margin-left: -300%;
+}
+
+/* Automatically change the radio buttons */
+@keyframes changeRadio {
+    0%, 20% { background-color: #fff; }
+    25%, 45% { background-color: #fff; }
+    50%, 70% { background-color: #fff; }
+    75%, 100% { background-color: #fff; }
+   
+}
 
 
     </style>
@@ -381,43 +523,103 @@
     @section('slider')
 
     {{-- Devolop your all content on between this section in the Home page --}}
-    <div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+   
   
 
     <section id="hero">
-    <img class="d-block w-100" src="{{ asset('images/mainHome.jpg') }}" alt="Hero Image" width="100%" height="715px">
-     @endsection
-    @section('content')
+   
+
+    <div class="slider">
+        <div class="slides">
+            <!-- Radio buttons for navigation (optional) -->
+            <input type="radio" name="radio-btn" id="radio1" checked>
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            
+
+            <!-- Slide images -->
+            <div class="slide first">
+            <img class="d-block w-100" src="{{ asset('images/mainHome1.jpeg') }}" alt="Image 1" width="100%" height="685px">
+            </div>
+            <div class="slide">
+            <img class="d-block w-100" src="{{ asset('images/mainHome.jpg') }}" alt="Image 2" width="100%" height="685px">
+            </div>
+            <div class="slide">
+            <img class="d-block w-100" src="{{ asset('images/mainHome2.jpeg') }}" alt="Image 3" width="100%" height="685px">
+              
+            </div>
+            <div class="slide">
+            <img class="d-block w-100" src="{{ asset('images/mainHome5.jpeg') }}" alt="Image 4" width="100%" height="685px">
+                
+            </div>
+           
+
+            <!-- Navigation for manual selection -->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>
+
+        <!-- Automatic navigation dots -->
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     
     <div class="hero-text">
-    <h1 class="hero-title">Welcome to Infocuor</h1>
+    <h1 class="hero-title">
+
+    <span>W</span>
+    <span>E</span>
+    <span>L</span>
+    <span>C</span>
+    <span>O</span>
+    <span>M</span>
+    <span>E</span>
+    <span>  </span>
+    </h1>
+    <h1 class="hero-title">
+    <span>TO</span>
+   
+    </h1>
+    <h1 class="hero-title">
+    <span>  </span>
+    <span>I</span>
+    <span>N</span>
+    <span>F</span>
+    <span>O</span>
+    <span>C</span>
+    <span>U</span>
+    <span>O</span>
+    <span>R</span>
+   
+
+    </h1>
     <p class="hero-subtitle">Moments captured with precision and passion</p>
-        <button class="hire-btn"><a href="/hire" style="color: white;">Hire Us</a></button>
-        <button class="login-btn"> <a href="/login" style="color: white;">Login</a></button>
+      <div class="button-container">
+    <button class="hire-btn"><a href="/hire" style="color: black;">Hire Us</a></button>
+       <button class="login-btn"> <a href="/login" style="color: black;">Login</a></button>
+       </div>
     </div>
 </section>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+
+@endsection
+
+
+@section('content')
 
 
 
-<div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+
 
 <section id="events">
     <div class="event-card">
@@ -635,6 +837,8 @@ of University Students.</p>
         </div>
     </div>
 </section>
+
+
 
 
     @endsection
