@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MembershipController;
+
+Route::get('/membership-form', [MembershipController::class, 'showForm'])->name('membership.form');
+Route::post('/membership-form', [MembershipController::class, 'submitForm'])->name('membership.submit');
+
 
 Route::get('/', function () {
     return view('welcome');
