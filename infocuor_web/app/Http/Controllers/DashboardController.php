@@ -16,7 +16,7 @@ class DashboardController extends Controller
         }
         elseif(Auth::user()->usertype == 'admin')
         {
-            return view('admin.adminHome');
+            return view('/admin');
         }
 
     }
