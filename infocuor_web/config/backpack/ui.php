@@ -63,8 +63,8 @@ return [
     'home_link' => '',
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-   'project_logo' => '<img src="' . asset('images/infocuor_logo.png') . '" alt="Logo" style="width: 150px;">',
-
+//    'project_logo' => '<img src="' . asset('images/infocuor_logo.png') . '" alt="Logo" style="width: 150px;">',
+    'project_logo' => 'Infocuor',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
