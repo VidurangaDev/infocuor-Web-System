@@ -14,9 +14,15 @@ class DashboardController extends Controller
         if(Auth::user()->usertype == 'user'){
             return view('dashboard');
         }
-        elseif(Auth::user()->usertype == 'admin')
+        elseif(Auth::user()->usertype == 'executive')
         {
-            return view('/admin');
+            return view('admin.dashboard_executive');
+        }
+        elseif(Auth::user()->usertype == 'member')
+        {
+            return view('admin.dashboard_member');
+        }else{
+            return redirect()->back();
         }
 
     }
