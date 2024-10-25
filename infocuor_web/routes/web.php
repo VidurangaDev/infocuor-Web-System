@@ -9,6 +9,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('pages.home');
 });
+Route::get('/membership', function () {
+    return view('pages.membership');
+});
 
 Route::middleware([
     'auth:sanctum',

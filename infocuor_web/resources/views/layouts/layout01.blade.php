@@ -40,6 +40,10 @@
         @include('components.navbar')
 
         <!-- Main content -->
+        <div class="slider">
+            @yield('slider')
+        </div>
+
         <div class="container main-content my-5">
             @yield('content')
         </div>
