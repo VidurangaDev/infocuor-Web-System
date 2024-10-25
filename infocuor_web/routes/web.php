@@ -13,6 +13,10 @@ Route::get('/membership', function () {
     return view('pages.membership');
 });
 
+Route::get('/history', function () {
+    return view('pages.history');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -22,3 +26,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'showGallery']);
