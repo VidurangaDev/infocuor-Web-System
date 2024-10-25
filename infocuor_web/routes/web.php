@@ -19,6 +19,13 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('pages.home');
 });
+Route::get('/membership', function () {
+    return view('pages.membership');
+});
+
+Route::get('/history', function () {
+    return view('pages.history');
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -29,3 +36,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'showGallery']);
