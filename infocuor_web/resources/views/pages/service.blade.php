@@ -4,8 +4,8 @@
 <!-- Hero Section -->
 <section class="hero-section" style="background-image: {{asset('images/cover.jpeg')}}; background-size: cover; height: 400px; text-align: center; padding: 100px 0; color: white;">
     <div class="container">
-        <h1>Experience Excellence Through Our Tailored Services</h1>
-        <p>Unlock unrivaled media coverage by accessing our standout services, designed to capture your moments with precision.</p>
+        <h1>Experience Excellence Through</br> Our Tailored Services</h1>
+        <p>Unlock unparalleled expertise by accessing our tailored services,</br> designed to elevate your experience and</br>meet your unique needs</p>
         <a href="#" class="btn btn-primary" style="padding: 10px 30px; background-color: #007bff;">Hire Us</a>
     </div>
 </section>
