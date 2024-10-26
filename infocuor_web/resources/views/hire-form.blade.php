@@ -3,132 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hire Us Form</title>
-    <link rel="stylesheet" href="{{ asset('css/hire-form.css') }}">
+    <title>Event Information Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-@if (session('success'))
-    <div>{{ session('success') }}</div>
-@endif
-
-<form action="{{ route('event.form.submit') }}" method="POST">
-    @csrf
-    <h2>Fill Your Information</h2>
-
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-    </div>
-
-    <div>
-        <label for="phone_number">Phone Number</label>
-        <input type="text" name="phone_number" id="phone_number" required>
-    </div>
-
-    <div>
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" required>
-    </div>
-
-    <div>
-        <label for="event_name">Event Name</label>
-        <input type="text" name="event_name" id="event_name" required>
-    </div>
-
-    <div>
-        <label for="event_type_day_or_night">Event Type</label>
-        <select name="event_type_day_or_night" required>
-            <option value="day">Day</option>
-            <option value="night">Night</option>
-        </select>
-
-        <select name="event_type_indoor_outdoor" required>
-            <option value="indoor">Indoor</option>
-            <option value="outdoor">Outdoor</option>
-        </select>
-    </div>
-
-    <div>
-        <label for="location">Location</label>
-        <input type="text" name="location" id="location" required>
-    </div>
-
-    <div>
-        <label for="faculty_department">Faculty/Department</label>
-        <select name="faculty_department" required>
-            <option value="Faculty Of Science">Faculty Of Science</option>
-            <!-- Add more options as needed -->
-        </select>
-    </div>
-
-    <div>
-        <label for="expected_duration">Expected Duration (hours)</label>
-        <input type="number" name="expected_duration" id="expected_duration" required>
-    </div>
-
-    <div>
-        <label for="expected_audience">Expected Audience</label>
-        <input type="number" name="expected_audience" id="expected_audience" required>
-    </div>
-
-    <div>
-        <label for="date">Date</label>
-        <input type="date" name="date" id="date" required>
-    </div>
-
-    <div>
-        <label for="time">Time</label>
-        <input type="time" name="time" id="time" required>
-    </div>
-
-    <div class="requirements-section">
-        <label>Requirements</label>
-        <div>
-            <input type="checkbox" name="requirements[]" value="photography"> Photography Coverage
-            <input type="checkbox" name="requirements[]" value="media_reporting"> Media Reporting
-            <input type="checkbox" name="requirements[]" value="videography"> Videography Coverage
-            <input type="checkbox" name="requirements[]" value="content_writing"> Content Writing
-            <input type="checkbox" name="requirements[]" value="live_streaming"> Live Streaming
-            <input type="checkbox" name="requirements[]" value="social_media_marketing"> Social Media Marketing
-        </div>
-    </div>
-
-    <div class="photography-section">
-        <label>Type of Photography Needed</label>
-        <div class="checkbox-section">
-            <div>
-                <input type="checkbox" name="photography_type[]" value="event_coverage"> Event Coverage
+    <div class="form-container">
+        <h1>Fill Your Information</h1>
+        <form id="eventForm">
+            <div class="section">
+                <h2>Personal Information</h2>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-            <div>
-                <input type="checkbox" name="photography_type[]" value="portraits"> Portraits
+            
+            <div class="section">
+                <h2>Contact Details</h2>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="email">E-mail Address</label>
+                <input type="email" id="email" name="email" required>
             </div>
-            <div>
-                <input type="checkbox" name="photography_type[]" value="photo_booth"> Photo Booth
+
+            <div class="section">
+                <h2>Event Details</h2>
+                <label for="eventName">Event Name</label>
+                <input type="text" id="eventName" name="eventName" required>
+
+                <label>Event Type</label>
+                <select name="time" required>
+                    <option>Day</option>
+                    <option>Night</option>
+                </select>
+                <select name="indoorOutdoor" required>
+                    <option>Indoor</option>
+                    <option>Outdoor</option>
+                </select>
+
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="faculty">Faculty/Department</label>
+                <select id="faculty" name="faculty" required>
+                    <option>Faculty Of Science</option>
+                    <option>Faculty Of Arts</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <label for="duration">Expected Duration</label>
+                <input type="number" id="duration" name="duration" required>
+
+                <label for="audience">Expected Audience</label>
+                <input type="number" id="audience" name="audience" required>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
             </div>
-            <div>
-                <input type="checkbox" name="photography_type[]" value="drone_scenes"> Drone Scenes
+
+            <div class="section">
+                <h2>Requirements</h2>
+                <label><input type="checkbox" name="requirement" value="Photography"> Photography Coverage</label>
+                <label><input type="checkbox" name="requirement" value="Media"> Media Reporting</label>
+                <label><input type="checkbox" name="requirement" value="Videography" checked> Videography Coverage</label>
+                <label><input type="checkbox" name="requirement" value="Content" checked> Content Writing</label>
+                <label><input type="checkbox" name="requirement" value="Live"> Live Streaming</label>
+                <label><input type="checkbox" name="requirement" value="Social"> Social Media Marketing</label>
             </div>
-        </div>
+
+            <div class="section">
+                <h2>Type of photography needed:</h2>
+                <label><input type="checkbox" name="photoType" value="Event" checked> Event Coverage</label>
+                <label><input type="checkbox" name="photoType" value="Portraits"> Portraits</label>
+                <label><input type="checkbox" name="photoType" value="Photo Booth"> Photo Booth</label>
+                <label><input type="checkbox" name="photoType" value="Drone"> Drone Scenes</label>
+            </div>
+
+            <div class="section">
+                <h2>Type of Videography needed:</h2>
+                <label><input type="checkbox" name="videoType" value="Full" checked> Full Event Coverage</label>
+                <label><input type="checkbox" name="videoType" value="Highlights"> Highlights Video</label>
+                <label><input type="checkbox" name="videoType" value="Drone"> Drone Scenes</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
     </div>
-
-    <div class="videography-section">
-        <label>Type of Videography Needed</label>
-        <div class="checkbox-section">
-            <div>
-                <input type="checkbox" name="videography_type[]" value="full_event_coverage"> Full Event Coverage
-            </div>
-            <div>
-                <input type="checkbox" name="videography_type[]" value="highlights_video"> Highlights Video
-            </div>
-            <div>
-                <input type="checkbox" name="videography_type[]" value="drone_scenes"> Drone Scenes
-            </div>
-        </div>
-    </div>
-
-    <input type="submit" value="Submit">
-</form>
-
+    <script src="script.js"></script>
 </body>
 </html>
