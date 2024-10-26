@@ -27,18 +27,24 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/hire-us', [\App\Http\Livewire\HireForm::class,'index'])->name('hire-us');
 });
 
-Route::get('/userdashboard', [DashboardController::class, 'index'])->name('user.index');
+// Route::get('/userdashboard', [DashboardController::class, 'index'])->name('user.index');
+// Route::post('/userdashboard', [DashboardController::class, 'index'])->name('user.index');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function ()
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function ()
 
-{
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+// {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/userdashboard', [DashboardController::class, 'index'])->name('userdashboard');
 });
+
 
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'showGallery']);
