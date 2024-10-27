@@ -1,7 +1,16 @@
 <x-guest-layout>
-    <x-authentication-card>
+
+
+
+
+
+
+
+
+    <x-authentication-card text-white bg-dark>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <img src="{{ asset('images/infocuor_logo.png') }}" alt="Logo"
+                style="width: 130px;">
         </x-slot>
 
         <x-validation-errors class="mb-4" />
