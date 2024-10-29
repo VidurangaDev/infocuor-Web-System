@@ -1,0 +1,22 @@
+public function up()
+{
+    Schema::create('events', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('phone_number');
+        $table->string('email');
+        $table->string('event_name');
+        $table->string('event_type_day_or_night');
+        $table->string('event_type_indoor_outdoor');
+        $table->string('location');
+        $table->string('faculty_department');
+        $table->integer('expected_duration');
+        $table->integer('expected_audience');
+        $table->date('date');
+        $table->time('time');
+        $table->json('requirements')->nullable(); // Checkbox inputs as JSON
+        $table->json('photography_type')->nullable();
+        $table->json('videography_type')->nullable();
+        $table->timestamps();
+    });
+}

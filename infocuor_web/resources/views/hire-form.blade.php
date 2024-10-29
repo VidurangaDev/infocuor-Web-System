@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<form action="{{ route('event.form.submit') }}" method="POST">
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
