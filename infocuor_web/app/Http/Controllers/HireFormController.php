@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HireForm;
 
 class HireFormController extends Controller
 {
@@ -11,7 +12,7 @@ class HireFormController extends Controller
     }
 
     public function submitForm(Request $request) {
-        $validatedData = $request->validate([
+         $request->validate([
             'name' => 'required|string|max:255',
             'phone_number' => 'required|string|max:20',
             'email' => 'required|email|max:255',
@@ -28,6 +29,8 @@ class HireFormController extends Controller
             'photography_type' => 'nullable|array',
             'videography_type' => 'nullable|array',
         ]);
+
+        HireForm::create($request->all());
 
         // You can process the form data here, such as sending an email or saving to a database
 

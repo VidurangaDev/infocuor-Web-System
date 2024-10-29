@@ -3,7 +3,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class HireForm extends Model
 {
     use HasFactory;
 
@@ -26,8 +26,10 @@ class Event extends Model
     ];
 
     protected $casts = [
-        'requirements' => 'array',         // Store checkboxes as arrays
+        'requirements' => 'array',
         'photography_type' => 'array',
         'videography_type' => 'array',
     ];
 }
+
+

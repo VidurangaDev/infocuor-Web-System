@@ -1,6 +1,6 @@
 public function up()
 {
-    Schema::create('events', function (Blueprint $table) {
+    Schema::create('hire_forms', function (Blueprint $table) {
         $table->id();
         $table->string('name');
         $table->string('phone_number');
@@ -14,7 +14,7 @@ public function up()
         $table->integer('expected_audience');
         $table->date('date');
         $table->time('time');
-        $table->json('requirements')->nullable(); // Checkbox inputs as JSON
+        $table->json('requirements')->nullable();
         $table->json('photography_type')->nullable();
         $table->json('videography_type')->nullable();
         $table->timestamps();
