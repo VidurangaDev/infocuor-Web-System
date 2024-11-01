@@ -29,8 +29,13 @@ Route::get('/hire', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::post('/book-event', [EventBookingController::class, 'submitForm'])->name('event.booking.submit');
-    
+
 });
+
+
+Route::get('/booking/updates', function () {
+    return view('admin.member.booking');
+})->name('booking_updates');
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->group(function () {

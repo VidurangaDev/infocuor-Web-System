@@ -22,8 +22,8 @@
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Executive Dashboard') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
-                         {{ __('Reports') }}
+                     <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                         {{ __('BOOKINGS') }}
                      </x-nav-link>
                 @elseif(Auth::user()->usertype === 'member')
                      <!-- Regular Member Links -->

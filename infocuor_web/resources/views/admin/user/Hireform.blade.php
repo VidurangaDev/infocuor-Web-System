@@ -48,7 +48,7 @@
             <script src="https://cdn.tailwindcss.com"></script>
 
             <body class="bg-cover bg-center h-screen" style="background-image: url('images/slide1.jpeg');">
-                <div class="flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-75">
+                <div class="flex items-center justify-center min-h-screen bg-red-900 bg-opacity-10">
                     <div class="bg-black bg-opacity-80 p-10 rounded-lg shadow-lg max-w-xl w-full">
                         <h1 class="text-3xl font-bold text-yellow-400 mb-6 text-center">BOOK AN EVENT</h1>
                         <form action="{{ route('event.booking.submit') }}" method="POST">
