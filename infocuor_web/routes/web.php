@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Livewire\HireForm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Livewire\HireForm;
+use App\Http\Controllers\EventBookingController;
 
 
 Route::get('/', function () {
@@ -25,6 +26,11 @@ Route::get('/history', function () {
 Route::get('/hire', function () {
     return view('admin.user.Hireform');
 })->name('hire');
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/book-event', [EventBookingController::class, 'submitForm'])->name('event.booking.submit');
+    
+});
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->group(function () {

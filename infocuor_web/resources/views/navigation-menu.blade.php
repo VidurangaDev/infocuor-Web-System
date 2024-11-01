@@ -36,7 +36,7 @@
                  @else
                      <!-- Regular User Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
-                         {{ __('User Dashboard') }}
+                         {{ __('USER DASHBOARD') }}
                      </x-nav-link>
                      <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
                          {{ __('HIRE') }}

@@ -36,11 +36,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('BOOKING DETAILS') }}
         </h2>
     </x-slot>
 
-    <div >
+    <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
 
@@ -51,7 +51,7 @@
                 <div class="flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-75">
                     <div class="bg-black bg-opacity-80 p-10 rounded-lg shadow-lg max-w-xl w-full">
                         <h1 class="text-3xl font-bold text-yellow-400 mb-6 text-center">BOOK AN EVENT</h1>
-                        <form action="/your-form-route" method="POST">
+                        <form action="{{ route('event.booking.submit') }}" method="POST">
                             @csrf
 
                             <!-- Personal Information Section -->
@@ -59,14 +59,16 @@
                                 <div>
                                     <label for="name" class="block text-gray-200">Name</label>
                                     <input type="text" name="name" id="name"
-                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none"
-                                        placeholder="Enter your name" required>
+                                    value="{{ old('name', auth()->user()->name) }}"
+                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none" required>
+                                    {{-- placeholder="Enter your name" > --}}
                                 </div>
                                 <div>
                                     <label for="email" class="block text-gray-200">Email</label>
                                     <input type="email" name="email" id="email"
-                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none"
-                                        placeholder="Enter your email" required>
+                                        value="{{ old('email', auth()->user()->email) }}"
+                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none" required>
+                                    {{-- placeholder="Enter your email" required> --}}
                                 </div>
                             </div>
 
@@ -91,16 +93,14 @@
                                 <div>
                                     <label for="date" class="block text-gray-200">Date</label>
                                     <input type="date" name="date" id="date"
-                                           class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none"
-                                           required>
+                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none" required>
                                 </div>
 
                                 <!-- Time Input -->
                                 <div>
                                     <label for="time" class="block text-gray-200">Time</label>
                                     <input type="time" name="time" id="time"
-                                           class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none"
-                                           required>
+                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none" required>
                                 </div>
                             </div>
 
@@ -135,8 +135,8 @@
                                 <div>
                                     <label for="department" class="block text-gray-200">Location Type</label>
                                     <input type="text" name="department" id="department"
-                                    class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none"
-                                    placeholder="Enter your Department" >
+                                        class="w-full p-3 bg-gray-800 text-white rounded focus:outline-none"
+                                        placeholder="Enter your Department">
                                 </div>
                             </div>
 
@@ -144,22 +144,22 @@
                             <h4 class="text-xl font-semibold text-yellow-400 mb-4">Requirements</h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                                 <div class="flex items-center">
-                                    <input type="checkbox" name="photography" id="photography"
+                                    <input type="checkbox" name="photography" id="photography" value="1"
                                         class="h-5 w-5 bg-gray-800">
                                     <label for="photography" class="ml-2 text-gray-200">Photography Coverage</label>
                                 </div>
                                 <div class="flex items-center">
-                                    <input type="checkbox" name="videography" id="videography"
+                                    <input type="checkbox" name="videography" id="videography" value="1"
                                         class="h-5 w-5 bg-gray-800">
                                     <label for="videography" class="ml-2 text-gray-200">Videography Coverage</label>
                                 </div>
                                 <div class="flex items-center">
-                                    <input type="checkbox" name="live_streaming" id="live_streaming"
+                                    <input type="checkbox" name="live_streaming" id="live_streaming" value="1"
                                         class="h-5 w-5 bg-gray-800">
                                     <label for="live_streaming" class="ml-2 text-gray-200">Live Streaming</label>
                                 </div>
                                 <div class="flex items-center">
-                                    <input type="checkbox" name="media_reporting" id="media_reporting"
+                                    <input type="checkbox" name="media_reporting" id="media_reporting" value="1"
                                         class="h-5 w-5 bg-gray-800">
                                     <label for="media_reporting" class="ml-2 text-gray-200">Media Reporting</label>
                                 </div>
@@ -172,6 +172,23 @@
                                     Now</button>
                             </div>
                         </form>
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+
+                        @if (session('success'))
+                            <div class="bg-green-500 text-white p-4 mb-4 rounded">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </body>
