@@ -37,14 +37,14 @@
     .navbar-toggler {
         border: 2px solid rgba(255, 255, 255, 0.655);
         background-color: #0050a574
-        /* Normal state border color */
+            /* Normal state border color */
     }
 
     /* Change the border color to light blue when clicked */
     .navbar-toggler.collapsed {
         border: 2px solid rgb(32, 197, 252);
         background-color: #02469098
-        /* Border color when clicked */
+            /* Border color when clicked */
     }
 
     /* Remove outline and shadow on focus */
@@ -90,11 +90,12 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Services
                     </a>
-                    <ul class="dropdown-menu" >
-                        <li><a class="dropdown-item" href="#">Photography</a></li>
-                        <li><a class="dropdown-item" href="#">Videography</a></li>
-                        <li><a class="dropdown-item" href="#">Media Reporting</a></li>
-                        <li><a class="dropdown-item" href="#">Live Streaming</a></li>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/photography">Photography</a></li>
+                        <li><a class="dropdown-item" href="/videography">Videography</a></li>
+                        <li><a class="dropdown-item" href="/meadiareporting">Media Reporting</a></li>
+                        <li><a class="dropdown-item" href="/livestreaming">Live Streaming</a></li>
                     </ul>
                 </li>
             </ul>

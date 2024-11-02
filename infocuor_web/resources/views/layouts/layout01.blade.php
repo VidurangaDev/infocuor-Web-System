@@ -13,6 +13,7 @@
         body {
             height: 100%;
             margin: 0;
+
         }
 
         /* Flexbox layout: full-page wrapper */
@@ -28,7 +29,6 @@
             flex: 1;
             /* This makes sure the content expands to take up the space */
         }
-
     </style>
 </head>
 
