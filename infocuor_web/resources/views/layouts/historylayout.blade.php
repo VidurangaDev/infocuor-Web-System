@@ -13,7 +13,6 @@
         body {
             height: 100%;
             margin: 0;
-
         }
 
         /* Flexbox layout: full-page wrapper */
@@ -29,6 +28,7 @@
             flex: 1;
             /* This makes sure the content expands to take up the space */
         }
+
     </style>
 </head>
 
@@ -40,18 +40,15 @@
         @include('components.navbar')
 
         <!-- Main content -->
-        <div class="slider">
-            @yield('slider')
-        </div>
-
-        <div class="container main-content my-5">
+        <div class="container-flood  main-content ">
             @yield('content')
+            
         </div>
 
         <!-- Footer fixed at the bottom -->
         @include('components.footer')
     </div>
-
+    
     @include('libraries.boostrapscript')
 </body>
 
