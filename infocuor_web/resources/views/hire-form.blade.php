@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <form action="{{ route('event.form.submit') }}" method="POST">
-
+@csrf
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MembershipController;
-use App\Http\Controllers\HireFormController;
+use App\Http\Controllers\EventFormController;
 
-Route::get('/hire', [HireFormController::class, 'showForm'])->name('hire.show');
-Route::post('/hire/submit', [HireFormController::class, 'submitForm'])->name('hire.submit');
+Route::post('/submit-form', [EventFormController::class, 'submitForm'])->name('event.form.submit');
 
 
-Route::get('/membership-form', [MembershipController::class, 'showForm'])->name('membership.form');
-Route::post('/membership-form', [MembershipController::class, 'submitForm'])->name('membership.submit');
+Route::post('/membership', [MembershipController::class, 'store'])->name('membership.store');
+
+
 
 
 Route::get('/', function () {
