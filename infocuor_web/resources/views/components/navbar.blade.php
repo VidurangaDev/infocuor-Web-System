@@ -1,7 +1,13 @@
 <style>
     .navbar {
-        background-color: #011F3F;
-        /* Change this to your background color */
+        position: fixed;
+        width: 100%;
+        /* background-color: #011F3F; */
+        z-index: 111;
+        background-color: rgba(	1, 31, 63, 0.9); 
+        backdrop-filter: blur(10px); 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+        
     }
 
     .custom-navbar-text {
@@ -46,6 +52,8 @@
         outline: none;
         box-shadow: none;
     }
+   
+    
 </style>
 
 
@@ -62,19 +70,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link active custom-navbar-text" aria-current="page" href="home.blade.php">Home</a>
+                    <a class="nav-link  custom-navbar-text {{ Request::is('home') ? 'active' : '' }}" aria-current="page" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text" href="#">About</a>
+                    <a class="nav-link custom-navbar-text  {{ Request::is('about') ? 'active' : '' }}"  aria-current="page" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text" href="#">History</a>
+                    <a class="nav-link  custom-navbar-text {{ Request::is('history') ? 'active' : '' }} " aria-current="page" href="/history">History</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text" href="membership.blade.php">Membership</a>
+                    <a class="nav-link custom-navbar-text {{ Request::is('membership') ? 'active' : '' }}" href="/membership">Membership</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text" href="#">Hire</a>
+                    <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="/hire-us">Hire</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -82,7 +90,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Services
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" >
                         <li><a class="dropdown-item" href="#">Photography</a></li>
                         <li><a class="dropdown-item" href="#">Videography</a></li>
                         <li><a class="dropdown-item" href="#">Media Reporting</a></li>
