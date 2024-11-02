@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\HireForm;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventBookingController;
 
@@ -32,12 +33,23 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+Route::get('/feedback', function () {
+    return view('admin.user.feedback');
+})->name('feedback.form');
+
+Route::post('/feedback', [FeedbackController::class,'store'])->name('feedback.submit');
+
+
+
+
+
+
 
 Route::get('/booking/updates', function () {
     return view('admin.member.booking');
 })->name('booking_updates');
 
-Route::get('/bookings', [EventBookingController::class, 'index'])->name('bookings.index'); 
+Route::get('/bookings', [EventBookingController::class, 'index'])->name('bookings.index');
 Route::post('/bookings/{id}/accept', [EventBookingController::class, 'accept'])->name('bookings.accept');
 Route::post('/bookings/{id}/reject', [EventBookingController::class, 'reject'])->name('bookings.reject');
 

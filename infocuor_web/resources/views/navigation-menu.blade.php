@@ -50,6 +50,12 @@
                      <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
                          {{ __('HIRE') }}
                      </x-nav-link>
+                     <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
+                        {{ __('TRACKER') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('feedback.form') }}" :active="request()->routeIs('feedback.form')">
+                        {{ __('FEEDBACK') }}
+                    </x-nav-link>
 
                  @endif
                 </div>

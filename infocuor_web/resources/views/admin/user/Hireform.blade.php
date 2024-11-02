@@ -25,7 +25,7 @@
 
     /* Ensuring the background stays fixed */
     body {
-        background-image: url('/path/to/your/background-image.png');
+        background-image: url('images/membershipHome');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 
             <script src="https://cdn.tailwindcss.com"></script>
 
-            <body class="bg-cover bg-center h-screen" style="background-image: url('images/slide1.jpeg');">
+            <body class="bg-cover bg-center h-screen" style="background-image:{{ asset('images/mainHome5.jpeg') }};">
                 <div class="flex items-center justify-center min-h-screen bg-red-900 bg-opacity-10">
                     <div class="bg-black bg-opacity-80 p-10 rounded-lg shadow-lg max-w-xl w-full">
                         <h1 class="text-3xl font-bold text-yellow-400 mb-6 text-center">BOOK AN EVENT</h1>
