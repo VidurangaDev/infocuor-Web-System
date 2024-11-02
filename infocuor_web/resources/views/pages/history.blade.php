@@ -1,5 +1,5 @@
  @extends('layouts.historylayout')
-
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
  @push('cssstyle')
@@ -112,6 +112,7 @@
 
 .carousel-item img {
     height: 600px;
+    width: 100%;
     object-fit: cover;
     position: relative;
 }
@@ -198,10 +199,9 @@
     });
 </script>
 
-
 <div id="slider" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" >
             <img src="{{ asset('images/slide1.jpg') }}" class="d-block w-100" alt="Slide 1">
         </div>
         <div class="carousel-item">
@@ -216,7 +216,7 @@
         <p class="note">LATEST EVENT</p>
         </div>
         <p class="note2">Knowing how to write a paragraph is incredibly important. It’s a basic aspect of writing, and it is something that everyone should know how to do. There is a specific structure that you have to follow when you’re writing a paragraph. This structure helps make it easier for the reader to understand what is going on. Through writing good paragraphs, a person can communicate a lot better through their writing.</p>
-        <a href="#" class="btn btn-primary slider-btn icon-shadow">Hire Us</a>
+        <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow">Hire Us</a>
     </div>
     <div class="white-overlay"></div>
     </div>

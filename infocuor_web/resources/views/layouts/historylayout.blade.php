@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HOME</title>
+    <title>History</title>
     @include('libraries.boostrapstyle')
 
     <style>
@@ -37,14 +37,17 @@
     <!-- Main content wrapper -->
     <div class="content-wrapper">
         <!-- Navbar -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
         @include('components.navbar')
 
+        
         <!-- Main content -->
-        <div class="container-flood  main-content ">
+        <div class="container-flood  main-content my-5">
             @yield('content')
-            
         </div>
-
         <!-- Footer fixed at the bottom -->
         @include('components.footer')
     </div>

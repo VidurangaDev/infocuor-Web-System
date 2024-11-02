@@ -1,9 +1,12 @@
 
 <style>
     .footer-section {
-    background-color: #0a2847;
+    /* background-color: #0a2847; */
     padding: 40px 0;
-    color: #ffffff;
+    /* color: #ffffff; */
+    background-color: rgba(	1, 31, 63, .9); 
+        /* backdrop-filter: blur(10px);  */
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); */
 }
 
 .footer-content {
