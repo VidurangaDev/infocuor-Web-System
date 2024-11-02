@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventBookingController;
 
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,6 +32,45 @@ Route::get('/hire', function () {
 Route::middleware(['auth'])->group(function () {
     Route::post('/book-event', [EventBookingController::class, 'submitForm'])->name('event.booking.submit');
 
+});
+Route::get('/membership', function () {
+    return view('pages.membership');
+});
+
+Route::get('/service', function () {
+    return view('pages.service');
+});
+Route::get('/photography', function () {
+    return view('pages.photography');
+});
+
+Route::get('/videography', function () {
+    return view('pages.videography');
+});
+
+Route::get('/livestreaming', function () {
+    return view('pages.livestreaming');
+});
+
+Route::get('/meadiareporting', function () {
+    return view('pages.meadiareporting');
+});
+
+Route::get('/history', function () {
+    return view('pages.history');
+});
+
+//Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('backpack.dashboard');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/hire-us', [\App\Http\Livewire\HireForm::class, 'index'])->name('hire-us');
+});
+
+Route::get('/userdashboard', [DashboardController::class, 'index'])->name('user.index');
+
+Route::get('/service', function () {
+    return view('pages.service');
 });
 
 Route::get('/feedback', function () {
@@ -68,6 +108,5 @@ Route::middleware(['auth:sanctum',
     'verified',])->group(function () {
     Route::get('/userdashboard', [DashboardController::class, 'index'])->name('userdashboard');
 });
-
 
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'showGallery']);
