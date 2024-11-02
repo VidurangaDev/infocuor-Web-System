@@ -22,9 +22,18 @@
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Executive Dashboard') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                     <x-nav-link href="{{ route('bookings.index') }}" :active="request()->routeIs('bookings.index')">
                          {{ __('BOOKINGS') }}
                      </x-nav-link>
+                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                        {{ __('CALENDER') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                        {{ __('BUDGET') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                        {{ __('DOCUMENT') }}
+                    </x-nav-link>
                 @elseif(Auth::user()->usertype === 'member')
                      <!-- Regular Member Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">

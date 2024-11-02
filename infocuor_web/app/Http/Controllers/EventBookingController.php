@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\EventBooking;  // Import the EventBooking model
+use App\Models\EventBooking;
+use Illuminate\Support\Facades\DB;
+
 
 class EventBookingController extends Controller
 {
@@ -31,11 +33,12 @@ class EventBookingController extends Controller
             'videography' => 'sometimes|boolean',
             'live_streaming' => 'sometimes|boolean',
             'media_reporting' => 'sometimes|boolean',
+            'status' => 'string|in:pending,accepted,rejected',
         ]);
 
        // Store the booking data using the model
        EventBooking::create([
-        'user_id' => auth()->user()->id, // Link to the authenticated user
+        'user_id' => auth()->user()->id,
         'name' => $validatedData['name'],
         'email' => $validatedData['email'],
         'phone' => $validatedData['phone'],
@@ -49,9 +52,61 @@ class EventBookingController extends Controller
         'videography' => $request->has('videography'),
         'live_streaming' => $request->has('live_streaming'),
         'media_reporting' => $request->has('media_reporting'),
+        'status' => $validatedData['status'],
     ]);
 
     // Redirect back with a success message
     return redirect()->back()->with('success', 'Event booking created successfully!');
     }
+
+
+
+
+    // Display all bookings
+    public function index()
+    {
+        try {
+            // dd('test1');
+             $bookings = EventBooking::query()->get();
+            // // dd('test');
+            // dd($bookings);
+            // // EventBooking::
+
+            //$bookings = DB::table('event_bookings')->get();
+            //dd($bookings);
+             return view('admin.member.booking', compact('bookings'));
+
+        }
+            catch (Exception $error) { dd($error); }
+
+        //return view('admin.member.booking', compact('bookings'));
+    }
+
+    // Accept a booking
+    public function accept($id)
+    {
+        $booking = EventBooking::findOrFail($id);
+        $booking->status = 'accepted';
+        $booking->save();
+
+        // Send email to the user
+        Mail::to($booking->email)->send(new BookingAcceptedMail($booking));
+
+        return redirect()->back()->with('success', 'Booking accepted and email sent to customer.');
+    }
+
+    // Reject a booking
+    public function reject($id)
+    {
+        $booking = EventBooking::findOrFail($id);
+        $booking->status = 'rejected';
+        $booking->save();
+
+        // Send email to the user
+        Mail::to($booking->email)->send(new BookingRejectedMail($booking));
+
+        return redirect()->back()->with('success', 'Booking rejected and email sent to customer.');
+    }
+
+
 }

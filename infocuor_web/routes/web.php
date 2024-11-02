@@ -37,6 +37,10 @@ Route::get('/booking/updates', function () {
     return view('admin.member.booking');
 })->name('booking_updates');
 
+Route::get('/bookings', [EventBookingController::class, 'index'])->name('bookings.index'); 
+Route::post('/bookings/{id}/accept', [EventBookingController::class, 'accept'])->name('bookings.accept');
+Route::post('/bookings/{id}/reject', [EventBookingController::class, 'reject'])->name('bookings.reject');
+
 
 // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //     Route::get('/hire-us', [\App\Http\Livewire\HireForm::class,'index'])->name('hire-us');

@@ -14,10 +14,10 @@ class EventBooking extends Model
 
      // Define the fillable fields to prevent mass-assignment issues
      protected $fillable = [
-         'user_id', 'name', 'email', 'phone', 'event_name',
+         'user_id','name', 'email', 'phone', 'event_name',
          'date', 'time', 'event_location', 'faculty',
          'department', 'photography', 'videography',
-         'live_streaming', 'media_reporting'
+         'live_streaming', 'media_reporting','status'
      ];
 
      // Relationship to the User model
