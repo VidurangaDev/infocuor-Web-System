@@ -1,0 +1,22 @@
+public function up()
+{
+    Schema::create('memberships', function (Blueprint $table) {
+        $table->id();
+        $table->string('fullname');
+        $table->date('dob');
+        $table->string('phone');
+        $table->string('email')->unique();
+        $table->string('address');
+        $table->string('department');
+        $table->enum('experience', ['beginner', 'intermediate', 'advanced']);
+        $table->string('interest')->nullable();
+        $table->enum('membership', ['regular', 'student', 'premium']);
+        $table->decimal('fee', 8, 2)->nullable(); // Adjust as needed for currency
+        $table->enum('payment', ['credit-card', 'debit-card', 'paypal', 'bank-transfer']);
+        $table->boolean('terms')->default(false);
+        $table->boolean('consent')->default(false);
+        $table->string('skills')->nullable();
+        $table->text('motivation')->nullable();
+        $table->timestamps();
+    });
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Membership;
 
 class MembershipController extends Controller
 {
@@ -11,27 +12,27 @@ class MembershipController extends Controller
         return view('membership_form');
     }
 
-    public function submitForm(Request $request)
+    public function store(Request $request)
     {
-        // Validate form inputs
-        $validated = $request->validate([
-            'full_name' => 'required|string|max:255',
+        $data = $request->validate([
+            'fullname' => 'required|string|max:255',
             'dob' => 'required|date',
-            'phone' => 'required|string',
-            'email' => 'required|email',
-            'address' => 'required|string',
-            'university' => 'nullable|string',
-            'experience_level' => 'required|string',
-            'interest_area' => 'nullable|string',
-            'membership_type' => 'required|string',
-            'payment_method' => 'required|string',
-            'terms' => 'required',
-            'data_consent' => 'required',
+            'phone' => 'required|string|max:15',
+            'email' => 'required|email|unique:memberships,email',
+            'address' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
+            'experience' => 'required|string',
+            'interest' => 'nullable|string',
+            'membership' => 'required|string',
+            'fee' => 'nullable|numeric',
+            'payment' => 'required|string',
+            'terms' => 'accepted',
+            'consent' => 'accepted',
+            'skills' => 'nullable|string',
+            'motivation' => 'nullable|string',
         ]);
 
-        // Save the data or send an email, etc.
-        // Example: Save data to the database (assuming you have a membership table):
-        // Membership::create($validated);
+        Membership::create($data);
 
         // Redirect or return success message
         return redirect()->back()->with('success', 'Membership form submitted successfully!');
