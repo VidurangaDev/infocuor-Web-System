@@ -1,20 +1,64 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-dark-blue border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('userdashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+
+                    <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('HOME') }}
                     </x-nav-link>
+
+                     <!-- Dynamic Links Based on User Role -->
+                @if(Auth::user()->usertype === 'executive')
+                     <!-- Executive Executive Links -->
+                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                         {{ __('Executive Dashboard') }}
+                     </x-nav-link>
+                     <x-nav-link href="{{ route('bookings.index') }}" :active="request()->routeIs('bookings.index')">
+                         {{ __('BOOKINGS') }}
+                     </x-nav-link>
+                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                        {{ __('CALENDER') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                        {{ __('BUDGET') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                        {{ __('DOCUMENT') }}
+                    </x-nav-link>
+                @elseif(Auth::user()->usertype === 'member')
+                     <!-- Regular Member Links -->
+                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                         {{ __('Member Dashboard') }}
+                     </x-nav-link>
+                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                         {{ __('Profile') }}
+                     </x-nav-link>
+                 @else
+                     <!-- Regular User Links -->
+                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                         {{ __('USER DASHBOARD') }}
+                     </x-nav-link>
+                     <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
+                         {{ __('HIRE') }}
+                     </x-nav-link>
+                     <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
+                        {{ __('TRACKER') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('feedback.form') }}" :active="request()->routeIs('feedback.form')">
+                        {{ __('FEEDBACK') }}
+                    </x-nav-link>
+
+                 @endif
                 </div>
             </div>
 
@@ -139,7 +183,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
