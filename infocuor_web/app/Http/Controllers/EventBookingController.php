@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\EventBooking;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BookingAcceptedMail;
+use App\Mail\BookingRejectedMail;
+
+
 
 class EventBookingController extends Controller
 {
@@ -33,7 +38,7 @@ class EventBookingController extends Controller
             'videography' => 'sometimes|boolean',
             'live_streaming' => 'sometimes|boolean',
             'media_reporting' => 'sometimes|boolean',
-            'status' => 'string|in:pending,accepted,rejected',
+            //'status' => 'string|in:pending,accepted,rejected',
         ]);
 
        // Store the booking data using the model
@@ -52,7 +57,7 @@ class EventBookingController extends Controller
         'videography' => $request->has('videography'),
         'live_streaming' => $request->has('live_streaming'),
         'media_reporting' => $request->has('media_reporting'),
-        'status' => $validatedData['status'],
+        //'status' => $validatedData['status'],
     ]);
 
     // Redirect back with a success message
@@ -67,12 +72,12 @@ class EventBookingController extends Controller
     {
         try {
             // dd('test1');
-             $bookings = EventBooking::query()->get();
+            // $bookings = EventBooking::query()->get();
             // // dd('test');
             // dd($bookings);
             // // EventBooking::
 
-            //$bookings = DB::table('event_bookings')->get();
+            $bookings = DB::table('event_bookings')->get();
             //dd($bookings);
              return view('admin.member.booking', compact('bookings'));
 

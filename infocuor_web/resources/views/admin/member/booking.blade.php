@@ -19,7 +19,7 @@
                         <strong>No bookings available at the moment.</strong>
                     </div>
                 @else
-                    <table class="table table-dark">
+                    <table class="table table-secondary">
                         <thead>
                             <tr>
                                 <th>Name</th>

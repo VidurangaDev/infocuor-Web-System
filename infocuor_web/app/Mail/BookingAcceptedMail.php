@@ -9,7 +9,10 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class BookingAcceptMail extends Mailable
+use App\Models\EventBooking;
+
+
+class BookingAcceptedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -37,8 +40,10 @@ class BookingAcceptMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: ('emails.bookingaccepted'),
         );
+
+
     }
 
     /**

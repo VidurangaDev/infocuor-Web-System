@@ -9,6 +9,8 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+use App\Models\EventBooking;
+
 class BookingRejectedMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -16,9 +18,9 @@ class BookingRejectedMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(EventBooking $booking)
     {
-        //
+        $this->booking = $booking;
     }
 
     /**
@@ -37,7 +39,7 @@ class BookingRejectedMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: ('emails.bookingrejected'),
         );
     }
 
@@ -49,5 +51,11 @@ class BookingRejectedMail extends Mailable
     public function attachments(): array
     {
         return [];
+    }
+
+    public function build()
+    {
+        return $this->view('emails.booking_rejeccted')
+                    ->with(['booking' => $this->booking]);
     }
 }
