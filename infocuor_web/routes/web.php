@@ -63,9 +63,9 @@ Route::get('/history', function () {
 //Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('backpack.dashboard');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/hire-us', [\App\Http\Livewire\HireForm::class, 'index'])->name('hire-us');
-});
+// Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+//     Route::get('/hire-us', [\App\Http\Livewire\HireForm::class, 'index'])->name('hire-us');
+// });
 
 Route::get('/userdashboard', [DashboardController::class, 'index'])->name('user.index');
 
@@ -78,11 +78,6 @@ Route::get('/feedback', function () {
 })->name('feedback.form');
 
 Route::post('/feedback', [FeedbackController::class,'store'])->name('feedback.submit');
-
-
-
-
-
 
 
 Route::get('/booking/updates', function () {
