@@ -209,6 +209,10 @@
 .gallery img:hover {
     transform: scale(1.05);
 }
+.hire-btn:hover {
+    background-color: #007bff;
+    transform: scale(1.1); /* Make button slightly bigger on hover */
+}
 
 </style>
 
@@ -247,7 +251,7 @@
         <p class="note">LATEST EVENT</p>
         </div>
         <p class="note2">Knowing how to write a paragraph is incredibly important. It’s a basic aspect of writing, and it is something that everyone should know how to do. There is a specific structure that you have to follow when you’re writing a paragraph. This structure helps make it easier for the reader to understand what is going on. Through writing good paragraphs, a person can communicate a lot better through their writing.</p>
-        <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow">Hire Us</a>
+        <a href="/hiru-us" class="hire-btn btn btn-primary slider-btn icon-shadow">Hire Us</a>
     </div>
     <div class="white-overlay"></div>
     </div>
