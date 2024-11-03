@@ -122,3 +122,7 @@ Route::get('/documents', function () {
 })->name('documents.index');
 
 Route::resource('documents', DocumentController::class);
+
+Route::get('/calander', function () {
+    return view('admin.member.calender');
+})->name('member.calender');

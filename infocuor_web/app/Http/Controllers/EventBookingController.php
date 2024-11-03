@@ -113,5 +113,11 @@ class EventBookingController extends Controller
         return redirect()->back()->with('success', 'Booking rejected and email sent to customer.');
     }
 
+    public function assignMembers(User $user, EventBooking $event)
+{
+    return $user->usertype === 'executive'; // Only executives can assign members
+}
+
+
 
 }

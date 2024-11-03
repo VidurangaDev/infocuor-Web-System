@@ -26,7 +26,7 @@
                      <x-nav-link href="{{ route('bookings.index') }}" :active="request()->routeIs('bookings.index')">
                          {{ __('BOOKINGS') }}
                      </x-nav-link>
-                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                    <x-nav-link href="{{ route('member.calender') }}" :active="request()->routeIs('member.calender')">
                         {{ __('CALENDER') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('budgets.index') }}" :active="request()->routeIs('budgets.index')">
@@ -43,6 +43,9 @@
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Profile') }}
                      </x-nav-link>
+                     <x-nav-link href="{{ route('member.calender') }}" :active="request()->routeIs('member.calender')">
+                        {{ __('CALENDER') }}
+                    </x-nav-link>
                  @else
                      <!-- Regular User Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
