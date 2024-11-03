@@ -123,6 +123,17 @@ body {
         cursor: pointer;
         transition: background 0.3s;
     }
+    .box{
+        margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #e6f2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    }
 
     .membership-btn:hover {
         background-color: #0056b3;
@@ -225,7 +236,7 @@ body {
 
 /* Styling for the Active Crew header */
 .header h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: #4B2A2A; /* Dark brown text */
     margin-bottom: 70px;
@@ -234,7 +245,7 @@ body {
 
 /* Styling for the Advisory Board title */
 .advisory-board h2 {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #4B2A2A;
     margin-bottom: 40px;
@@ -323,6 +334,27 @@ body {
             height: auto;
         }
 
+        /* Year details styling */
+.year-details {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.year-details h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.year-details p {
+    color: #666;
+    font-size: 1em;
+}
+
 /* Member roles */
 .card span {
     font-size: 1rem;
@@ -408,38 +440,40 @@ body {
 
     <div class="advisory-board">
         <h2>Advisory Board</h2>
+        <div class="box">
         <div class="board-members">
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/d.m.samarathunga.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/samarathunga.png') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Dr. D.M Samarathunga</p>
                     <span>Chief Patron</span>
                 </div>
             </div>
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/nandani.png') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Dr. E.J.K.P Nandani</p>
                     <span>Senior Treasurer</span>
                 </div>
             </div>
         </div>
     </div>
-
+    </div>
 
     <div class="advisory-board">
         <h2>Excecutive Board</h2>
+        <div class="box">
         <div class="board-members">
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/d.m.samarathunga.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/amayuru.jpeg') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Amayuru viduranga</p>
                     <span>president</span>
                 </div>
             </div>
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/wishvajith.jpeg') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Wishwajith shsjs</p><span>Treasure</span>
                     <span>Secratery</span>
                 </div>
@@ -448,7 +482,7 @@ body {
             <var>
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/anupa.jpeg') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Anupa Gunasekara</p>
                     <span>Secratery</span>
                 </div>
@@ -456,38 +490,41 @@ body {
             </var>
         </div>
     </div>
+    </div>
 
     <div class="advisory-board">
-        <h2>Advisory Board</h2>
+        <h2>Team Heads</h2>
+        <div class="box">
         <div class="board-members">
             <div class="member">
                 <div class="card">
                 <img src="{{ asset('images/d.m.samarathunga.png') }}" alt="Event Image2" width="200px" height="200px">
-                    <p>Dr. D.M Samarathunga</p>
-                    <span>Chief Patron</span>
+                    <p>Thakshila</p>
+                    <span>Head - Team Videography</span>
                 </div>
             </div>
             <div class="member">
                 <div class="card">
                 <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
-                    <p>Dr. E.J.K.P Nandani</p>
-                    <span>Senior Treasurer</span>
-                </div>
-            </div>
-
-            <div class="member">
-                <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
-                    <p>Dr. E.J.K.P Nandani</p>
-                    <span>Senior Treasurer</span>
+                    <p>Induru Nimesha
+</p>
+                    <span>Head - Team Photography </span>
                 </div>
             </div>
 
             <div class="member">
                 <div class="card">
                 <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
-                    <p>Dr. E.J.K.P Nandani</p>
-                    <span>Senior Treasurer</span>
+                    <p>Sandani Kolon</p>
+                    <span>Head- Team Content Writing</span>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="card">
+                <img src="{{ asset('images/supun.jpeg') }}" alt="Event Image2" width="200px" height="200px">
+                    <p>Supun Adhikaram</p>
+                    <span>Head- Tead Graphic Design</span>
                 </div>
             </div>
 
@@ -501,8 +538,9 @@ body {
         </div>
     </div>
 </div>
+        </div>
 
-<div class="section">
+<div class="section2">
     <div class="header">
         <h1>History Of crew Members</h1>
     </div>
@@ -519,6 +557,49 @@ body {
         <span onclick="showYearDetails(2023)">2023</span>
         <span onclick="showYearDetails(2024)">2024</span>
     </div>
+
+     <!-- Year-specific details (initially hidden) -->
+     <div class="year-details" id="year-2015">
+        <h2>2015</h2>
+        <p>Details of crew members from 2015.</p>
+    </div>
+    <div class="year-details" id="year-2016">
+        <h2>2016</h2>
+        <p>Details of crew members from 2016.</p>
+    </div>
+    <div class="year-details" id="year-2015">
+        <h2>2017</h2>
+        <p>Details of crew members from 2017.</p>
+    </div>
+    <div class="year-details" id="year-2016">
+        <h2>2018</h2>
+        <p>Details of crew members from 2018.</p>
+    </div>
+    <div class="year-details" id="year-2015">
+        <h2>2019</h2>
+        <p>Details of crew members from 2019.</p>
+    </div>
+    <div class="year-details" id="year-2016">
+        <h2>2020</h2>
+        <p>Details of crew members from 2020.</p>
+    </div>
+    <div class="year-details" id="year-2015">
+        <h2>2021</h2>
+        <p>Details of crew members from 2021.</p>
+    </div>
+    <div class="year-details" id="year-2016">
+        <h2>2022</h2>
+        <p>Details of crew members from 2022.</p>
+    </div>
+    <div class="year-details" id="year-2015">
+        <h2>2023</h2>
+        <p>Details of crew members from 2023.</p>
+    </div>
+    <div class="year-details" id="year-2016">
+        <h2>2024</h2>
+        <p>Details of crew members from 2024.</p>
+    </div>
+    
 
     <!-- Advisory Board -->
     <div class="advisory-board">
@@ -603,15 +684,19 @@ body {
         };
   // Function to show the "Active Crew" section when a year is clicked
   function showYearDetails(year) {
-        // Get the Active Crew section by its ID
-        var activeCrewSection = document.getElementById('active-crew');
-        
-        // Display the Active Crew section
-        activeCrewSection.style.display = 'block';
-        
-        // Log the selected year (optional for debugging)
-        console.log("Year selected:", year);
+    // Hide all year details
+    const yearSections = document.querySelectorAll('.year-details');
+    yearSections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Show the selected year details
+    const selectedYear = document.getElementById(`year-${year}`);
+    if (selectedYear) {
+        selectedYear.style.display = 'block';
     }
+}
+ 
 
 
 
