@@ -831,7 +831,7 @@ input[type="radio"] {
   </button>
 </div>
 
-<section id="about">
+<section id="about" style="padding-top: 100px;">
     <h2>About Us</h2>
 
 <p>Infocuor is the Photography Society of

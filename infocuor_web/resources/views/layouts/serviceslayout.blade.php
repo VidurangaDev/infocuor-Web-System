@@ -26,7 +26,7 @@
 
         /* Main content that will take up remaining space */
         .main-content {
-            padding-top: 25px;
+            padding-top: 12px;
             flex: 1;
             /* This makes sure the content expands to take up the space */
         }
@@ -41,7 +41,7 @@
         @include('components.navbar')
 
         <!-- Main content -->
-        <div class="slider main-content mt-5">
+        <div class="slider main-content">
             @yield('slider')
         </div>
 

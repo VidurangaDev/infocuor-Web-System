@@ -42,7 +42,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.0);
+            background-color: rgba(0, 0, 0, 0);
             color: white;
             border: none;
             cursor: pointer;
@@ -179,6 +179,37 @@
             height: 0vh; 
             text-align: center;
 }
+.image-container {
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.image-container img {
+    width: 200px;
+    display: block;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.image-caption {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: bolder;
+    
+}
+/* Image grid */
+.gallery img {
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
 </style>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -248,22 +279,49 @@
 </div>
 
 
-<div class="gallery-container ">
+<div class="gallery-container text-shadow">
 
     <div class="scroll-gallery "  id="gallery" >
-         <img src="{{ asset('storage/image1.jpg/') }}" alt="Gallery Image1">
-         <img src="{{ asset('storage/image2.jpg/') }}" alt="Gallery Image2">
-         <img src="{{ asset('storage/image3.jpg/') }}" alt="Gallery Image3">
-         <img src="{{ asset('storage/image4.jpg/') }}" alt="Gallery Image4">
-         <img src="{{ asset('storage/image5.jpg/') }}" alt="Gallery Image5">
-         <img src="{{ asset('storage/image6.jpg/') }}" alt="Gallery Image6">
-         <img src="{{ asset('storage/image7.jpg/') }}" alt="Gallery Image7">
-         <img src="{{ asset('storage/image8.jpg/') }}" alt="Gallery Image8">
+    <div class="image-container">
+         <img src="{{ asset('storage/image1.jpg/') }}" onclick="openGallery(0)" alt="Gallery Image1">
+         <p class="image-caption">2015</p>
     </div>
-    <button class="carousel-control-prev-icon left-arrow"  onclick="scrollLeft()"></button>
+    <div class="image-container">
+         <img src="{{ asset('storage/image2.jpg/') }}" onclick="openGallery(1)" alt="Gallery Image2">
+         <p class="image-caption">2016</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image3.jpg/') }}" onclick="openGallery(2)" alt="Gallery Image3">
+         <p class="image-caption">2017</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image4.jpg/') }}" onclick="openGallery(3)" alt="Gallery Image4">
+         <p class="image-caption">2018</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image5.jpg/') }}" onclick="openGallery(4)" alt="Gallery Image5">
+         <p class="image-caption">2019</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image6.jpg/') }}" onclick="openGallery(5)" alt="Gallery Image6">
+         <p class="image-caption">2020</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image7.jpg/') }}" onclick="openGallery(6)" alt="Gallery Image7">
+         <p class="image-caption">2021</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image8.jpg/') }}" onclick="openGallery(7)" alt="Gallery Image8">
+         <p class="image-caption">2022</p>
+    </div>
+    <div class="image-container">
+         <img src="{{ asset('storage/image9.jpg/') }}" onclick="" alt="Gallery Image9">
+         <p class="image-caption">2023</p>
+    </div>
+    
+    <!-- <button class="carousel-control-prev-icon left-arrow"  onclick="scrollLeft()"></button> -->
     <button class="carousel-control-next-icon right-arrow" onclick="scrollRight()"></button>
 </div>
-
 <script>
   function scrollLeft() {
     var gallery = document.getElementById('gallery');
@@ -290,9 +348,6 @@ function scrollRight() {
         });
     }
 }
-
-    
-    
 </script>
 
  @endsection
