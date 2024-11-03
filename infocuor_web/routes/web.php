@@ -2,10 +2,11 @@
 
 use App\Http\Livewire\HireForm;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventBookingController;
-use App\Http\Controllers\BudgetController;
 
 
 
@@ -115,3 +116,9 @@ Route::middleware(['auth:sanctum',
 });
 
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'showGallery']);
+
+Route::get('/documents', function () {
+    return view('documents.index');
+})->name('documents.index');
+
+Route::resource('documents', DocumentController::class);

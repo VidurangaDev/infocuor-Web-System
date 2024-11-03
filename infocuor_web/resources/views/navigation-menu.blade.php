@@ -32,7 +32,7 @@
                     <x-nav-link href="{{ route('budgets.index') }}" :active="request()->routeIs('budgets.index')">
                         {{ __('BUDGET') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('booking_updates') }}" :active="request()->routeIs('booking_updates')">
+                    <x-nav-link href="{{ route('documents.index') }}" :active="request()->routeIs('documents.index')">
                         {{ __('DOCUMENT') }}
                     </x-nav-link>
                 @elseif(Auth::user()->usertype === 'member')
