@@ -144,6 +144,7 @@ body {
     }
 
     .modal-content {
+        top: 95px;
         background: white;
         padding: 25px;
         border-radius: 10px;
@@ -356,7 +357,7 @@ body {
        
 <section id="hero-section">
 
-<img class="d-block w-100" src="{{ asset('images/memhome.jpeg') }}" alt="Hero Image" width="100%" height="750px">
+<img class="d-block w-100" src="{{ asset('images/memHome.jpeg') }}" alt="Hero Image" width="100%" height="750px">
 
     <div class="hero-overlay">
     <div class="banner">Inviting Applications for New Membership</div>
