@@ -4,9 +4,11 @@
     /* background-color: #0a2847; */
     padding: 40px 0;
     /* color: #ffffff; */
-    background-color: rgba(	1, 31, 63, .9); 
+    background-color: rgba(	1, 31, 63, 0.8); 
         /* backdrop-filter: blur(10px);  */
         /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, 1));
 }
 
 .footer-content {

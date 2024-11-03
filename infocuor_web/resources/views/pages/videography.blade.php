@@ -1,5 +1,4 @@
-@extends('layouts.layout01')
-
+@extends('layouts.serviceslayout')
 @section('content')
 <!-- Hero Section with Background Image -->
 <section class="hero-section"

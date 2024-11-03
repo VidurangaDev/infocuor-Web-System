@@ -25,6 +25,7 @@
 
         /* Main content that will take up remaining space */
         .main-content {
+            padding-top: 25px;
             flex: 1;
             /* This makes sure the content expands to take up the space */
         }
@@ -45,7 +46,7 @@
 
         
         <!-- Main content -->
-        <div class="container-flood  main-content my-5">
+        <div class="container-flood  main-content  mt-5">
             @yield('content')
         </div>
         <!-- Footer fixed at the bottom -->

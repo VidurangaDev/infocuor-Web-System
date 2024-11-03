@@ -2,12 +2,15 @@
     .navbar {
         position: fixed;
         width: 100%;
+        top:0;
+        /* padding: 15px 20px; */
         /* background-color: #011F3F; */
         z-index: 111;
-        background-color: rgba(	1, 31, 63, 0.9); 
+        background-color: rgba(17, 101, 190, 0.91); 
         backdrop-filter: blur(10px); 
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-        
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, .6));
+        /* border-radius:0 0 10% 10%; */
     }
 
     .custom-navbar-text {
@@ -73,7 +76,7 @@
                     <a class="nav-link  custom-navbar-text {{ Request::is('home') ? 'active' : '' }}" aria-current="page" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text  {{ Request::is('about') ? 'active' : '' }}"  aria-current="page" href="/about">About</a>
+                    <a class="nav-link custom-navbar-text  {{ Request::is('about') ? 'active' : '' }}"  aria-current="" href="{{ url('/home') }}#about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link  custom-navbar-text {{ Request::is('history') ? 'active' : '' }} " aria-current="page" href="/history">History</a>
