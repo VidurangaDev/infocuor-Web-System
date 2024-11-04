@@ -137,9 +137,10 @@
 } */
 .note2{
     padding: 8px 16px;
-      font-size: 1.10rem;
+      font-size: 1.00rem;
       color: black;
       font-weight: 30%;
+  
 }
 .note3{
     padding: 32px 256px;

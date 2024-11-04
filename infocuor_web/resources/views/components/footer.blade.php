@@ -68,6 +68,39 @@
     font-size: 14px;
     color: #ffffff;
 }
+/*email*/
+.contact-email {
+            font-size: 1.1em;
+            color: #333;
+            text-align: center;
+            
+          
+        }
+        .contact-email a {
+            color: white;
+            text-decoration: none;
+        }
+        .contact-email a:hover {
+            text-decoration: underline;
+            color: aqua;
+        }
+
+        /*read button*/
+        .paragraph {
+            max-height: 50px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .show-more .paragraph {
+            max-height: 200px; /* Adjust this value to control expanded height */
+        }
+        .read-more-button {
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+        }
+
 </style>
 <footer class="footer-section text-white py-4">
     <div class="container">
@@ -79,8 +112,8 @@
             </div>
             <div class="col-12 col-md-4 contact-info text-center mb-3 mb-md-0">
                 <h5>Email</h5>
-                <p>infocuor@usci.ruh.ac.lk</p>
-            </div>
+                <div class="contact-email"> <a href="mailto:infocuor@usci.ruh.ac.lk" >infocuor@usci.ruh.ac.lk</a>
+            </div></div>
             <div class="col-12 col-md-4 contact-info text-center">
                 <h5>Location</h5>
                 <p>Wallamadama, Matara, Sri Lanka</p>
