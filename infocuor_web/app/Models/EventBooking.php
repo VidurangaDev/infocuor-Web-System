@@ -25,4 +25,8 @@ class EventBooking extends Model
      {
          return $this->belongsTo(User::class);
      }
+     public function members() {
+        return $this->hasMany(EventMemberAssignment::class);
+    }
+    
 }

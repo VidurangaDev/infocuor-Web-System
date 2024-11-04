@@ -99,6 +99,12 @@ Route::get('/bookings', [EventBookingController::class, 'index'])->name('booking
 Route::post('/bookings/{id}/accept', [EventBookingController::class, 'accept'])->name('bookings.accept');
 Route::post('/bookings/{id}/reject', [EventBookingController::class, 'reject'])->name('bookings.reject');
 
+Route::get('/fetch-bookings', [EventBookingController::class, 'fetchBookings']);
+
+Route::post('/booking/{id}/assign-members', [EventBookingController::class, 'assignMembers'])->name('booking.assign-members');
+
+
+
 
 // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //     Route::get('/hire-us', [\App\Http\Livewire\HireForm::class,'index'])->name('hire-us');
@@ -126,3 +132,7 @@ Route::resource('documents', DocumentController::class);
 Route::get('/calander', function () {
     return view('admin.member.calender');
 })->name('member.calender');
+
+
+Route::get('/calendar/{id}', [EventBookingController::class, 'showCalendar'])->name('calendar.show');
+

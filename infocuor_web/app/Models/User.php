@@ -72,4 +72,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Budget::class);
     }
+    public function assignedBookings() {
+        return $this->hasMany(EventMemberAssignment::class);
+    }
+    
 }
