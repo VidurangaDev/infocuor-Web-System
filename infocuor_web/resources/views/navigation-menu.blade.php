@@ -43,7 +43,7 @@
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
                          {{ __('Executive Dashboard') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('bookings.index') }}" class="text-color" :active="request()->routeIs('bookings.index')">
+                    <x-nav-link href="{{ route('bookings.index') }}" class="text-color" :active="request()->routeIs('bookings.index')">
                          {{ __('BOOKINGS') }}
                      </x-nav-link>
                     <x-nav-link href="{{ route('booking_updates') }}" class="text-color" :active="request()->routeIs('booking_updates')">
@@ -57,10 +57,11 @@
                     </x-nav-link>
                 @elseif(Auth::user()->usertype === 'member')
                      <!-- Regular Member Links -->
+
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
                          {{ __('Member Dashboard') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
+                     <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')
                          {{ __('Profile') }}
                      </x-nav-link>
                  @else
