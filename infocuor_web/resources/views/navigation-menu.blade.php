@@ -61,9 +61,6 @@
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
                          {{ __('Member Dashboard') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')
-                         {{ __('Profile') }}
-                     </x-nav-link>
                  @else
                      <!-- Regular User Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">

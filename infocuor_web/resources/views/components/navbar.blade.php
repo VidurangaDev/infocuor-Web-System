@@ -87,10 +87,22 @@
                 <li class="nav-item">
                     <a class="nav-link custom-navbar-text {{ Request::is('membership') ? 'active' : '' }}" href="/membership">Membership</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="{{ route('hire') }}">Hire</a>
-                </li>
-                
+
+
+                    <li class="nav-item">
+
+                        @auth
+                        <a class="nav-link custom-navbar-text {{ Request::is('hire') ? 'active' : '' }}" href="{{ route('hire') }}">Hire</a>
+                        @endauth
+
+                        @guest
+                        <a class="nav-link custom-navbar-text {{ Request::is('login') ? 'active' : '' }}" href="{{ route('login') }}">Hire</a>
+                        {{-- <a class="nav-link" href="{{ route('login') }}">Hire</a> --}}
+
+                        @endguest
+
+                    </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle custom-navbar-text" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
