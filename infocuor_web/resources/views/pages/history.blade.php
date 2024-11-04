@@ -250,7 +250,7 @@
         <div class="text-shadow">
         <p class="note">LATEST EVENT</p>
         </div>
-        <p class="note2">Knowing how to write a paragraph is incredibly important. It’s a basic aspect of writing, and it is something that everyone should know how to do. There is a specific structure that you have to follow when you’re writing a paragraph. This structure helps make it easier for the reader to understand what is going on. Through writing good paragraphs, a person can communicate a lot better through their writing.</p>
+        <p class="note2">Theertha is an exciting new talent showcase organized by the science faculty, designed to bring out the diverse skills and creativity of its students. This event provides a platform for students to exhibit their unique talents across various fields, from performing arts and music to innovative scientific projects and more. Theertha aims to celebrate the vibrant spirit and potential within the science faculty, fostering a community of creativity, expression, and inspiration among students and faculty alike.</p>
         <a href="/hiru-us" class="hire-btn btn btn-primary slider-btn icon-shadow">Hire Us</a>
     </div>
     <div class="white-overlay"></div>
@@ -278,7 +278,7 @@
 <p class="note4 ">INFOCUOR Photographic Evolutiony</p>
 </div>
 <div class="slider-overlay4">
-<p class="note5">A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs. This is because paragraphs </p>
+<p class="note5">Infocour is the dedicated photography association within the science faculty, bringing together students who share a passion for capturing moments through the lens. This group fosters creativity and technical skill development, offering members the chance to explore various aspects of photography, participate in events, and showcase their work. Infocour serves as a vibrant community for budding photographers to learn, collaborate, and contribute to faculty events, all while celebrating the art of photography.</p>
 </div>
 </div>
 

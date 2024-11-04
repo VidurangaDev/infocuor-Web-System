@@ -9,10 +9,13 @@
         background-color: rgba(17, 101, 190, 0.91); 
         backdrop-filter: blur(10px); 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, .6));
+        
         /* border-radius:0 0 10% 10%; */
     }
-
+    .navbarclr {
+        background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, .6));
+    }
+    
     .custom-navbar-text {
         color: #ffffff;
         /* Change this to your desired color */
@@ -62,7 +65,7 @@
 
 
 
-<nav class="navbar navbar-expand-md shadow-sm">
+<nav class="navbar navbarclr navbar-expand-md shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="{{ asset('images/infocuor_logo.png') }}" alt="Logo"
                 style="width: 130px;"></a>
@@ -85,7 +88,10 @@
                     <a class="nav-link custom-navbar-text {{ Request::is('membership') ? 'active' : '' }}" href="/membership">Membership</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="/hire-us">Hire</a>
+                    <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="{{ route('hire') }}">Hire</a>
+                </li>
+                <li class="nav-item">
+                 <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="{{ route('userdashboard') }}">Dashboard</a>
                 </li>
 
                 <li class="nav-item dropdown">
