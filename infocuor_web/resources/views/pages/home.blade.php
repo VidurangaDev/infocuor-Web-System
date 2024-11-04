@@ -19,7 +19,7 @@
 
         .hero-text {
             position: absolute;
-            top: 40%;
+            top: 28%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -424,6 +424,16 @@
     transition: 0.6s ease;
 }
 
+.white-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); 
+    z-index: 1; 
+}
+
 /* Hides all input radio buttons */
 input[type="radio"] {
     display: none;
@@ -597,7 +607,8 @@ input[type="radio"] {
             
 
             <!-- Slide images -->
-            <div class="slide first">
+            <div class="slide first" >
+                
             <img class="d-block w-100" src="{{ asset('images/mainHome1.jpeg') }}" alt="Image 1" width="100%" height="685px">
             </div>
             <div class="slide">
@@ -611,6 +622,7 @@ input[type="radio"] {
             <img class="d-block w-100" src="{{ asset('images/mainHome5.jpeg') }}" alt="Image 4" width="100%" height="685px">
                 
             </div>
+          
            
 
             <!-- Navigation for manual selection -->
@@ -622,16 +634,10 @@ input[type="radio"] {
             </div>
         </div>
 
-        <!-- Automatic navigation dots -->
-        <div class="navigation-auto">
-            <div class="auto-btn1"></div>
-            <div class="auto-btn2"></div>
-            <div class="auto-btn3"></div>
-            <div class="auto-btn4"></div>
-        </div>
+      
     </div>
 
-    <script src="script.js"></script>
+    
     
     <div class="hero-text">
     <h1 class="hero-title">
@@ -646,28 +652,31 @@ input[type="radio"] {
     <span>  </span>
     </h1>
     <h1 class="hero-title">
-    <span>TO</span>
+   TO
    
     </h1>
     <h1 class="hero-title">
-    <span>  </span>
-    <span>I</span>
-    <span>N</span>
-    <span>F</span>
-    <span>O</span>
-    <span>C</span>
-    <span>U</span>
-    <span>O</span>
-    <span>R</span>
+        I 
+        N 
+        F 
+        O 
+        C 
+        O 
+        U 
+        R 
+        
    
 
     </h1>
+    
     <p class="hero-subtitle">Moments captured with precision and passion</p>
       <div class="button-container">
-    <button class="hire-btn"><a href="/hire" style="color: black;">Hire Us</a></button>
-       <button class="login-btn"> <a href="/login" style="color: black;">Login</a></button>
+      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow">Hire Us</a>
+      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow"> Login </a>
        </div>
+      
     </div>
+   
 </section>
 
 @endsection
