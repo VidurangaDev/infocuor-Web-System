@@ -106,6 +106,9 @@
             background-color: #007bff;
             transform: scale(1.1);
         }
+        .btn{
+                margin: 20px;
+        }
 
         #events {
             display: flex;
@@ -655,8 +658,15 @@ input[type="radio"] {
                 <label for="radio4" class="manual-btn"></label>
             </div>
         </div>
+        
+        <!-- Automatic navigation dots -->
+        <!-- <div class="navigation-auto"> -->
+            <!-- <div class="auto-btn1"></div> -->
+            <!-- <div class="auto-btn2"></div> -->
+            <!-- <div class="auto-btn3"></div> -->
+            <!-- <div class="auto-btn4"></div> -->
+        <!-- </div> -->
 
-      
     </div>
 
     
@@ -693,8 +703,8 @@ input[type="radio"] {
     
     <p class="hero-subtitle">Moments captured with precision and passion</p>
       <div class="button-container">
-      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow">Hire Us</a>
-      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow"> Login </a>
+      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow hire-btn">Hire Us</a>
+      <a href="/login" class="btn btn-primary slider-btn icon-shadow login-btn">Login</a>
        </div>
       
     </div>
@@ -858,14 +868,14 @@ input[type="radio"] {
     </div>
     
 </section>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+<!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"> -->
+    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+    <!-- <span class="visually-hidden">Previous</span> -->
+  <!-- </button> -->
+  <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> -->
+    <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+    <!-- <span class="visually-hidden">Next</span> -->
+  <!-- </button> -->
 </div>
 
 <section id="about" style="padding-top: 100px;">

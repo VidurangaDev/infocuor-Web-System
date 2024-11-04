@@ -10,11 +10,11 @@ use App\Http\Controllers\EventBookingController;
 
 
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
@@ -122,3 +122,8 @@ Route::get('/documents', function () {
 })->name('documents.index');
 
 Route::resource('documents', DocumentController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/update-tracking-status/{id}', [EventBookingController::class, 'updateTrackingStatus'])->name('updateTrackingStatus');
+});
+

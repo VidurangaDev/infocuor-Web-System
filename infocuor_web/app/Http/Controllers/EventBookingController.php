@@ -94,6 +94,9 @@ class EventBookingController extends Controller
         $booking->status = 'accepted';
         $booking->save();
 
+        $booking->tracking_status = 'Covering';
+        $booking->save();
+
         // Send email to the user
         Mail::to($booking->email)->send(new BookingAcceptedMail($booking));
 
@@ -111,6 +114,28 @@ class EventBookingController extends Controller
         Mail::to($booking->email)->send(new BookingRejectedMail($booking));
 
         return redirect()->back()->with('success', 'Booking rejected and email sent to customer.');
+    }
+
+    public function updateTrackingStatus(Request $request, $id)
+    {
+        $booking = EventBooking::findOrFail($id);
+
+        // Ensure only authorized users (e.g., members or executives) can update
+        if (auth()->user()->role !== 'executive' && auth()->user()->role !== 'member') {
+            return back()->with('error', 'Unauthorized to update status.');
+        }
+
+        $booking->tracking_status = $request->status;
+
+        if ($request->status === 'Completed') {
+            $booking->service_completed = true;
+            // Send completion email to the customer
+            Mail::to($booking->customer_email)->send(new EventCompletedMail($booking));
+        }
+
+        $booking->save();
+
+        return back()->with('success', 'Tracking status updated successfully.');
     }
 
 
