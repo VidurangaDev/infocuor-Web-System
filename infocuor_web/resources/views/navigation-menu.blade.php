@@ -22,7 +22,7 @@
                      <!-- Executive Executive Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Executive Dashboard') }}
-                     </x-nav-link>
+                     </x-nav-link> --}}
                      <x-nav-link href="{{ route('bookings.index') }}" :active="request()->routeIs('bookings.index')">
                          {{ __('BOOKINGS') }}
                      </x-nav-link>
@@ -37,9 +37,9 @@
                     </x-nav-link>
                 @elseif(Auth::user()->usertype === 'member')
                      <!-- Regular Member Links -->
-                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Member Dashboard') }}
-                     </x-nav-link>
+                     </x-nav-link> --}}
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Profile') }}
                      </x-nav-link>
@@ -51,7 +51,7 @@
                      <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
                          {{ __('HIRE') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
+                     <x-nav-link href="{{ route('bookings.index') }}" :active="request()->routeIs('bookings.index')">
                         {{ __('TRACKER') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('feedback.form') }}" :active="request()->routeIs('feedback.form')">
