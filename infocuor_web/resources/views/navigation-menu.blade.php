@@ -7,10 +7,10 @@
             /* padding: 15px 20px; */
             /* background-color: #011F3F; */
             z-index: 111;
-            background-color: rgba(17, 101, 190, 0.91); 
-            backdrop-filter: blur(10px); 
+            background-color: rgba(17, 101, 190, 0.91);
+            backdrop-filter: blur(10px);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- 
+
             background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, .6));
         }
         .text-color{
@@ -77,7 +77,6 @@
                     <x-nav-link href="{{ route('feedback.form') }}" class="text-color" :active="request()->routeIs('feedback.form')">
                         {{ __('FEEDBACK') }}
                     </x-nav-link>
-
                  @endif
                 </div>
             </div>

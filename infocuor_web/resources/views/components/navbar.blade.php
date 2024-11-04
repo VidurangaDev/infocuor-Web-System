@@ -6,16 +6,16 @@
         /* padding: 15px 20px; */
         /* background-color: #011F3F; */
         z-index: 111;
-        background-color: rgba(17, 101, 190, 0.91); 
-        backdrop-filter: blur(10px); 
+        background-color: rgba(17, 101, 190, 0.91);
+        backdrop-filter: blur(10px);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        
+
         /* border-radius:0 0 10% 10%; */
     }
     .navbarclr {
         background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, .6));
     }
-    
+
     .custom-navbar-text {
         color: #ffffff;
         /* Change this to your desired color */
@@ -58,8 +58,8 @@
         outline: none;
         box-shadow: none;
     }
-   
-    
+
+
 </style>
 
 
@@ -90,10 +90,7 @@
                 <li class="nav-item">
                     <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="{{ route('hire') }}">Hire</a>
                 </li>
-                <li class="nav-item">
-                 <a class="nav-link custom-navbar-text {{ Request::is('hiru-us') ? 'active' : '' }}" href="{{ route('userdashboard') }}">Dashboard</a>
-                </li>
-
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle custom-navbar-text" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -101,12 +98,57 @@
                     </a>
 
                     <ul class="dropdown-menu">
+
                         <li><a class="dropdown-item" href="/photography">Photography</a></li>
                         <li><a class="dropdown-item" href="/videography">Videography</a></li>
                         <li><a class="dropdown-item" href="/meadiareporting">Media Reporting</a></li>
                         <li><a class="dropdown-item" href="/livestreaming">Live Streaming</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle custom-navbar-text " href="#" role="button "
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        SIGNUP
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        @auth
+                        <li><a class="dropdown-item"
+                            href="{{ url('/userdashboard') }}"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                        >
+                            Dashboard
+                        </a></li>
+                    @else
+                        <li><a class="dropdown-item"
+                            href="{{ route('login') }}"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                        >
+                            Login
+                        </a></li>
+
+                        @if (Route::has('register'))
+                            <li><a class="dropdown-item"
+                                href="{{ route('register') }}"
+                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                            >
+                                Register
+                            </a></li>
+                        @endif
+                    @endauth
+                    </ul>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
             </ul>
         </div>
     </div>
