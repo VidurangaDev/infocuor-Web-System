@@ -582,6 +582,28 @@ input[type="radio"] {
             background-color: #333;
         }
 
+          /* Initially hide the paragraph */
+          #myParagraph {
+            display: none;
+        font-size: 10px;
+        color: #333;
+        margin-top: 10px;
+        }
+        .con button {
+        padding: 5px 10px;
+        font-size: 13px;
+        color: #fff;
+        background-color: skyblue;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .con button:hover {
+            background-color: #007bff;
+            transform: scale(1.1);
+        }
+
     </style>
 
 
@@ -731,7 +753,9 @@ input[type="radio"] {
     <p>
         After 28 years, Sri Lanka's sprint champion Aruna Darshana has qualified for the semi-finals in the men's 400m event!
     </p>
-   <a href="#" >Read More</a>
+    <button onclick="toggleParagraph()">Read More</button>
+    <p id="myParagraph">Tharushi Karunaratne is a talented Sri Lankan middle-distance runner specializing in the 800 meters. Known for her strong finishing kick and impressive endurance, she has emerged as a promising figure in South Asian athletics. Tharushi gained widespread recognition with her outstanding performances in regional competitions, showcasing her dedication and disciplined training. Her achievements have inspired many young athletes in Sri Lanka, as she continues to raise the profile of Sri Lankan athletics on the international stage.</p>
+   
 </div>
         
     </div>
@@ -779,7 +803,8 @@ input[type="radio"] {
     <p>
         After 28 years, Sri Lanka's sprint champion Aruna Darshana has qualified for the semi-finals in the men's 400m event!
     </p>
-   <a href="#" >Read More</a>
+    <button onclick="toggleParagraph()">Read More</button>
+  
     </div>
  </div>
 
@@ -824,7 +849,10 @@ input[type="radio"] {
     <p>
         After 28 years, Sri Lanka's sprint champion Aruna Darshana has qualified for the semi-finals in the men's 400m event!
     </p>
-   <a href="#" >Read More</a>
+    <button onclick="toggleParagraph()">Read More</button>
+    <p id="myParagraph">Tharushi Karunaratne is a talented Sri Lankan middle-distance runner specializing in the 800 meters. Known for her strong finishing kick and impressive endurance, she has emerged as a promising figure in South Asian athletics. Tharushi gained widespread recognition with her outstanding performances in regional competitions, showcasing her dedication and disciplined training. Her achievements have inspired many young athletes in Sri Lanka, as she continues to raise the profile of Sri Lankan athletics on the international stage.</p>
+   
+  
 </div>
         
     </div>
@@ -945,6 +973,16 @@ of University Students.</p>
         }
 
         showSlides(); // Start the slide show
+
+        //button click
+        function toggleParagraph() {
+            var paragraph = document.getElementById("myParagraph");
+            if (paragraph.style.display === "none") {
+                paragraph.style.display = "block"; // Show paragraph
+            } else {
+                paragraph.style.display = "none"; // Hide paragraph
+            }
+        }
 </script>
 
     @endsection
