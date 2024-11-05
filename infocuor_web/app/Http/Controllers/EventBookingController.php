@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\EventBooking;
+use App\Models\User;
+use App\Models\EventAssignMember;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Mail;
@@ -116,6 +118,66 @@ class EventBookingController extends Controller
         return redirect()->back()->with('success', 'Booking rejected and email sent to customer.');
     }
 
+
+    public function fetchBookings() {
+        $bookings = EventBooking::select('id', 'event_name', 'date')
+            ->get()
+            ->map(function ($booking) {
+                return [
+                    'id' => $booking->id,
+                    'title' => $booking->event_name,
+                    'start' => $booking->date,
+                ];
+            });
+
+        return response()->json($bookings);
+    }
+
+
+    public function assignMembers(Request $request) {
+        
+            $eventId = $request->input('event_id');
+            $userIds = $request->input('user_ids');
+
+            // Assuming you have a pivot table event_assign_members
+            $booking = EventBooking::find($eventId);
+        
+        if ($booking) {
+            // Assign selected members to the event
+            $booking->members()->sync($userIds);
+
+            return redirect()->back()->with('success', 'Members assigned successfully.');
+            }
+
+            return redirect()->back()->with('error', 'Event not found.');
+    }
+   
+
+
+
+    public function showCalendar($id)
+    {
+    // Fetch users with the usertype 'member'
+    $booking = EventBooking::find($id);
+    
+    if (!$booking) {
+        return abort(404, 'Booking not found.');
+    }
+
+    // Fetch users of type 'member'
+    //$users = User::where('usertype', 'member')->get();
+
+    $users = DB::table('users')
+                ->where('usertype', 'member')
+                ->get();
+
+    dd($users);
+    // Pass 'booking' and 'users' to the view
+    return view('admin.member.calender', compact('booking', 'users'));
+    }
+    
+
+
     public function updateTrackingStatus(Request $request, $id)
     {
         $booking = EventBooking::findOrFail($id);
@@ -137,6 +199,7 @@ class EventBookingController extends Controller
 
         return back()->with('success', 'Tracking status updated successfully.');
     }
+
 
 
 }

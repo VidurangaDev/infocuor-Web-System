@@ -6,7 +6,9 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
-                'resources/js/app.js',
+                 'resources/js/app.js',
+                'node_modules/@fullcalendar/core/main.css',
+                'node_modules/@fullcalendar/daygrid/main.css',
             ],
             refresh: true,
         }),
