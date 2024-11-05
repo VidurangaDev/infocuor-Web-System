@@ -19,7 +19,7 @@
 
         .hero-text {
             position: absolute;
-            top: 28%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -105,9 +105,6 @@
         .login-btn:hover {
             background-color: #007bff;
             transform: scale(1.1);
-        }
-        .btn{
-                margin: 20px;
         }
 
         #events {
@@ -427,16 +424,6 @@
     transition: 0.6s ease;
 }
 
-.white-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.3); 
-    z-index: 1; 
-}
-
 /* Hides all input radio buttons */
 input[type="radio"] {
     display: none;
@@ -585,28 +572,6 @@ input[type="radio"] {
             background-color: #333;
         }
 
-          /* Initially hide the paragraph */
-          #myParagraph {
-            display: none;
-        font-size: 10px;
-        color: #333;
-        margin-top: 10px;
-        }
-        .con button {
-        padding: 5px 10px;
-        font-size: 13px;
-        color: #fff;
-        background-color: skyblue;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .con button:hover {
-            background-color: #007bff;
-            transform: scale(1.1);
-        }
-
     </style>
 
 
@@ -632,8 +597,7 @@ input[type="radio"] {
             
 
             <!-- Slide images -->
-            <div class="slide first" >
-                
+            <div class="slide first">
             <img class="d-block w-100" src="{{ asset('images/mainHome1.jpeg') }}" alt="Image 1" width="100%" height="685px">
             </div>
             <div class="slide">
@@ -647,7 +611,6 @@ input[type="radio"] {
             <img class="d-block w-100" src="{{ asset('images/mainHome5.jpeg') }}" alt="Image 4" width="100%" height="685px">
                 
             </div>
-          
            
 
             <!-- Navigation for manual selection -->
@@ -658,18 +621,17 @@ input[type="radio"] {
                 <label for="radio4" class="manual-btn"></label>
             </div>
         </div>
-        
-        <!-- Automatic navigation dots -->
-        <!-- <div class="navigation-auto"> -->
-            <!-- <div class="auto-btn1"></div> -->
-            <!-- <div class="auto-btn2"></div> -->
-            <!-- <div class="auto-btn3"></div> -->
-            <!-- <div class="auto-btn4"></div> -->
-        <!-- </div> -->
 
+        <!-- Automatic navigation dots -->
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
     </div>
 
-    
+    <script src="script.js"></script>
     
     <div class="hero-text">
     <h1 class="hero-title">
@@ -684,31 +646,28 @@ input[type="radio"] {
     <span>  </span>
     </h1>
     <h1 class="hero-title">
-   TO
+    <span>TO</span>
    
     </h1>
     <h1 class="hero-title">
-        I 
-        N 
-        F 
-        O 
-        C 
-        O 
-        U 
-        R 
-        
+    <span>  </span>
+    <span>I</span>
+    <span>N</span>
+    <span>F</span>
+    <span>O</span>
+    <span>C</span>
+    <span>U</span>
+    <span>O</span>
+    <span>R</span>
    
 
     </h1>
-    
     <p class="hero-subtitle">Moments captured with precision and passion</p>
       <div class="button-container">
-      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow hire-btn">Hire Us</a>
-      <a href="/login" class="btn btn-primary slider-btn icon-shadow login-btn">Login</a>
+    <button class="hire-btn"><a href="/hire" style="color: black;">Hire Us</a></button>
+       <button class="login-btn"> <a href="/login" style="color: black;">Login</a></button>
        </div>
-      
     </div>
-   
 </section>
 
 @endsection
@@ -763,9 +722,7 @@ input[type="radio"] {
     <p>
         After 28 years, Sri Lanka's sprint champion Aruna Darshana has qualified for the semi-finals in the men's 400m event!
     </p>
-    <button onclick="toggleParagraph()">Read More</button>
-    <p id="myParagraph">Tharushi Karunaratne is a talented Sri Lankan middle-distance runner specializing in the 800 meters. Known for her strong finishing kick and impressive endurance, she has emerged as a promising figure in South Asian athletics. Tharushi gained widespread recognition with her outstanding performances in regional competitions, showcasing her dedication and disciplined training. Her achievements have inspired many young athletes in Sri Lanka, as she continues to raise the profile of Sri Lankan athletics on the international stage.</p>
-   
+   <a href="#" >Read More</a>
 </div>
         
     </div>
@@ -813,8 +770,7 @@ input[type="radio"] {
     <p>
         After 28 years, Sri Lanka's sprint champion Aruna Darshana has qualified for the semi-finals in the men's 400m event!
     </p>
-    <button onclick="toggleParagraph()">Read More</button>
-  
+   <a href="#" >Read More</a>
     </div>
  </div>
 
@@ -859,23 +815,20 @@ input[type="radio"] {
     <p>
         After 28 years, Sri Lanka's sprint champion Aruna Darshana has qualified for the semi-finals in the men's 400m event!
     </p>
-    <button onclick="toggleParagraph()">Read More</button>
-    <p id="myParagraph">Tharushi Karunaratne is a talented Sri Lankan middle-distance runner specializing in the 800 meters. Known for her strong finishing kick and impressive endurance, she has emerged as a promising figure in South Asian athletics. Tharushi gained widespread recognition with her outstanding performances in regional competitions, showcasing her dedication and disciplined training. Her achievements have inspired many young athletes in Sri Lanka, as she continues to raise the profile of Sri Lankan athletics on the international stage.</p>
-   
-  
+   <a href="#" >Read More</a>
 </div>
         
     </div>
     
 </section>
-<!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"> -->
-    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-    <!-- <span class="visually-hidden">Previous</span> -->
-  <!-- </button> -->
-  <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> -->
-    <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-    <!-- <span class="visually-hidden">Next</span> -->
-  <!-- </button> -->
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <section id="about" style="padding-top: 100px;">
@@ -983,16 +936,6 @@ of University Students.</p>
         }
 
         showSlides(); // Start the slide show
-
-        //button click
-        function toggleParagraph() {
-            var paragraph = document.getElementById("myParagraph");
-            if (paragraph.style.display === "none") {
-                paragraph.style.display = "block"; // Show paragraph
-            } else {
-                paragraph.style.display = "none"; // Hide paragraph
-            }
-        }
 </script>
 
     @endsection

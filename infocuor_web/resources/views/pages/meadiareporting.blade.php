@@ -20,7 +20,7 @@
     <!-- Centered content container -->
     <div class="text-center" style="text-align: center;">
         <!-- Photography Button -->
-        <button style="font-size: 24px; padding: 10px 30px; background-color: #007bff; border: none; color: white; font-weight: bold; border-radius: 5px;">
+        <button onclick="window.location.href='{{ route('hire') }}';" style="font-size: 24px; padding: 10px 30px; background-color: #007bff; border: none; color: white; font-weight: bold; border-radius: 5px;">
             Media Reporting
         </button>
 

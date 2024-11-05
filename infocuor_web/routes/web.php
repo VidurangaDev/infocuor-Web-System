@@ -10,11 +10,11 @@ use App\Http\Controllers\EventBookingController;
 
 
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
@@ -129,10 +129,16 @@ Route::get('/documents', function () {
 
 Route::resource('documents', DocumentController::class);
 
+
 Route::get('/calander', function () {
     return view('admin.member.calender');
 })->name('member.calender');
 
 
 Route::get('/calendar/{id}', [EventBookingController::class, 'showCalendar'])->name('calendar.show');
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/update-tracking-status/{id}', [EventBookingController::class, 'updateTrackingStatus'])->name('updateTrackingStatus');
+});
+
 

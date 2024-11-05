@@ -1,4 +1,24 @@
-<nav x-data="{ open: false }" class="bg-dark-blue border-b border-gray-100">
+<head>
+    <style>
+        .bc{
+            position: fixed;
+            width: 100%;
+            top:0;
+            /* padding: 15px 20px; */
+            /* background-color: #011F3F; */
+            z-index: 111;
+            background-color: rgba(17, 101, 190, 0.91);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+            background: linear-gradient(to bottom, rgba(17, 101, 190, 0.91), rgba(0, 0, 0, .6));
+        }
+        .text-color{
+            color: #e9e1e1;
+        }
+    </style>
+</head>
+<nav x-data="{ open: false }" class="bc">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -13,54 +33,56 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
 
-                    <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                    <x-nav-link href="{{ route('home') }}" class="text-color" :active="request()->routeIs('home')">
                         {{ __('HOME') }}
                     </x-nav-link>
 
                      <!-- Dynamic Links Based on User Role -->
                 @if(Auth::user()->usertype === 'executive')
                      <!-- Executive Executive Links -->
-                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                     <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
                          {{ __('Executive Dashboard') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('bookings.index') }}" :active="request()->routeIs('bookings.index')">
+                    <x-nav-link href="{{ route('bookings.index') }}" class="text-color" :active="request()->routeIs('bookings.index')">
                          {{ __('BOOKINGS') }}
                      </x-nav-link>
+
                     <x-nav-link href="{{ route('member.calender') }}" :active="request()->routeIs('member.calender')">
-                        {{ __('CALENDER') }}
+                     {{ __('CALENDER') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('budgets.index') }}" :active="request()->routeIs('budgets.index')">
+                    <x-nav-link href="{{ route('budgets.index') }}" class="text-color" :active="request()->routeIs('budgets.index')">
                         {{ __('BUDGET') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('documents.index') }}" :active="request()->routeIs('documents.index')">
+                    <x-nav-link href="{{ route('documents.index') }}" class="text-color" :active="request()->routeIs('documents.index')">
                         {{ __('DOCUMENT') }}
                     </x-nav-link>
                 @elseif(Auth::user()->usertype === 'member')
                      <!-- Regular Member Links -->
-                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                     <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
                          {{ __('Member Dashboard') }}
                      </x-nav-link>
+
                      <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
                          {{ __('Profile') }}
                      </x-nav-link>
                      <x-nav-link href="{{ route('member.calender') }}" :active="request()->routeIs('member.calender')">
                         {{ __('CALENDER') }}
                     </x-nav-link>
+
                  @else
                      <!-- Regular User Links -->
-                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
+                     <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
                          {{ __('USER DASHBOARD') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
+                     <x-nav-link href="{{ route('hire') }}" class="text-color" :active="request()->routeIs('hire')">
                          {{ __('HIRE') }}
                      </x-nav-link>
-                     <x-nav-link href="{{ route('hire') }}" :active="request()->routeIs('hire')">
-                        {{ __('TRACKER') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('feedback.form') }}" :active="request()->routeIs('feedback.form')">
+                     <!-- <x-nav-link href="{{ route('hire') }}" class="text-color" :active="request()->routeIs('hire')"> -->
+                        <!-- {{ __('TRACKER') }} -->
+                    <!-- </x-nav-link> -->
+                    <x-nav-link href="{{ route('feedback.form') }}" class="text-color" :active="request()->routeIs('feedback.form')">
                         {{ __('FEEDBACK') }}
                     </x-nav-link>
-
                  @endif
                 </div>
             </div>
