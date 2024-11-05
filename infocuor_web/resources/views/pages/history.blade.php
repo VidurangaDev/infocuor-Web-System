@@ -252,7 +252,12 @@
         <p class="note">LATEST EVENT</p>
         </div>
         <p class="note2">Theertha is an exciting new talent showcase organized by the science faculty, designed to bring out the diverse skills and creativity of its students. This event provides a platform for students to exhibit their unique talents across various fields, from performing arts and music to innovative scientific projects and more. Theertha aims to celebrate the vibrant spirit and potential within the science faculty, fostering a community of creativity, expression, and inspiration among students and faculty alike.</p>
-        <a href="/hiru-us" class="hire-btn btn btn-primary slider-btn icon-shadow">Hire Us</a>
+        @auth
+<a href="{{ route('hire') }}" class="btn btn-primary slider-btn icon-shadow hire-btn {{ Request::is('hire') ? 'active' : '' }}">Hire Us</a>
+@endauth  
+@guest
+<a href="{{ route('login') }}" class="btn btn-primary slider-btn icon-shadow hire-btn {{ Request::is('login') ? 'active' : '' }}">Hire Us</a>
+@endguest
     </div>
     <div class="white-overlay"></div>
     </div>

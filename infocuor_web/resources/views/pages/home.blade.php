@@ -703,8 +703,13 @@ input[type="radio"] {
     
     <p class="hero-subtitle">Moments captured with precision and passion</p>
       <div class="button-container">
-      <a href="/hiru-us" class="btn btn-primary slider-btn icon-shadow hire-btn">Hire Us</a>
-      <a href="/login" class="btn btn-primary slider-btn icon-shadow login-btn">Login</a>
+        @auth
+      <a href="{{ route('hire') }}" class="btn btn-primary slider-btn icon-shadow hire-btn {{ Request::is('hire') ? 'active' : '' }}">Hire Us</a>
+      @endauth  
+      @guest
+      <a href="{{ route('login') }}" class="btn btn-primary slider-btn icon-shadow hire-btn {{ Request::is('login') ? 'active' : '' }}">Hire Us</a>
+      @endguest
+      <a href="{{ route('login') }}" class="btn btn-primary slider-btn icon-shadow login-btn">Login</a>
        </div>
       
     </div>
@@ -863,7 +868,7 @@ input[type="radio"] {
     <p id="myParagraph">Tharushi Karunaratne is a talented Sri Lankan middle-distance runner specializing in the 800 meters. Known for her strong finishing kick and impressive endurance, she has emerged as a promising figure in South Asian athletics. Tharushi gained widespread recognition with her outstanding performances in regional competitions, showcasing her dedication and disciplined training. Her achievements have inspired many young athletes in Sri Lanka, as she continues to raise the profile of Sri Lankan athletics on the international stage.</p>
    
   
-</div>
+    </div>
         
     </div>
     

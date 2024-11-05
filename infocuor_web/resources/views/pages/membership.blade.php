@@ -1,5 +1,4 @@
-
-@extends('layouts.layout01')
+@extends('layouts.serviceslayout')
 
 
 
@@ -498,14 +497,14 @@ body {
         <div class="board-members">
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/d.m.samarathunga.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/pngegg.png') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Thakshila</p>
                     <span>Head - Team Videography</span>
                 </div>
             </div>
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/pngegg.png') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Induru Nimesha
 </p>
                     <span>Head - Team Photography </span>
@@ -514,7 +513,7 @@ body {
 
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
+                <img src="{{ asset('images/pngegg.png') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Sandani Kolon</p>
                     <span>Head- Team Content Writing</span>
                 </div>
@@ -524,15 +523,15 @@ body {
                 <div class="card">
                 <img src="{{ asset('images/supun.jpeg') }}" alt="Event Image2" width="200px" height="200px">
                     <p>Supun Adhikaram</p>
-                    <span>Head- Tead Graphic Design</span>
+                    <span>Head- Team Graphic Design</span>
                 </div>
             </div>
 
             <div class="member">
                 <div class="card">
-                <img src="{{ asset('images/dr.nandani.png') }}" alt="Event Image2" width="200px" height="200px">
-                    <p>Dr. E.J.K.P Nandani</p>
-                    <span>Senior Treasurer</span>
+                <img src="{{ asset('images/pngegg.png') }}" alt="Event Image2" width="200px" height="200px">
+                    <p>Indhumini Dhanayaka</p>
+                    <span>Head- Team Media Reporting </span>
                 </div>
             </div>
         </div>
@@ -602,55 +601,55 @@ body {
     
 
     <!-- Advisory Board -->
-    <div class="advisory-board">
-    <h1>Active Crew</h1>
-        <h2>Advisory Board</h2>
-        <div class="board-members">
-            <div class="member">
-                <div class="card">
-                    <img src="{{ asset('images/d.m.samarathunga.png') }}" alt="Dr. D.M Samarathunga">
-                    <p>Dr. D.M Samarathunga</p>
-                    <span>Chief Patron</span>
-                </div>
-            </div>
-            <div class="member">
-                <div class="card">
-                    <img src="{{ asset('images/dr.nandani.png') }}" alt="Dr. E.J.K.P Nandani">
-                    <p>Dr. E.J.K.P Nandani</p>
-                    <span>Senior Treasurer</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- <div class="advisory-board"> -->
+     <!-- <h1>Active Crew</h1> -->
+        <!-- <h2>Advisory Board</h2> -->
+        <!-- <div class="board-members"> -->
+            <!-- <div class="member"> -->
+                <!-- <div class="card"> -->
+                    <!-- <img src="{{ asset('images/pngegg.png') }}" alt="Dr. D.M Samarathunga"> -->
+                    <!-- <p>Dr. D.M Samarathunga</p>pngegg.png -->
+                    <!-- <span>Chief Patron</span> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="member"> -->
+                <!-- <div class="card"> -->
+                    <!-- <img src="{{ asset('images/pngegg.png') }}" alt="Dr. E.J.K.P Nandani"> -->
+                    <!-- <p>Dr. E.J.K.P Nandani</p> -->
+                    <!-- <span>Senior Treasurer</span> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
 
     <!-- Executive Board -->
-    <div class="executive-board">
-        <h2>Executive Board</h2>
-        <div class="board-members">
-            <div class="member">
-                <div class="card">
-                    <img src="{{ asset('images/d.m.samarathunga.png') }}" alt="Amayuru Viduranga">
-                    <p>Amayuru Viduranga</p>
-                    <span>President</span>
-                </div>
-            </div>
-            <div class="member">
-                <div class="card">
-                    <img src="{{ asset('images/dr.nandani.png') }}" alt="Wishwajith Shsjs">
-                    <p>Wishwajith Shsjs</p>
-                    <span>Treasurer</span>
-                    <span>Secretary</span>
-                </div>
-            </div>
-            <div class="member">
-                <div class="card">
-                    <img src="{{ asset('images/dr.nandani.png') }}" alt="Anupa Gunasekara">
-                    <p>Anupa Gunasekara</p>
-                    <span>Secretary</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- <div class="executive-board"> -->
+        <!-- <h2>Executive Board</h2> -->
+        <!-- <div class="board-members"> -->
+            <!-- <div class="member"> -->
+                <!-- <div class="card"> -->
+                    <!-- <img src="{{ asset('images/amayuru.jpeg') }}" alt="Amayuru Viduranga"> -->
+                    <!-- <p>Amayuru Viduranga</p> -->
+                    <!-- <span>President</span> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="member"> -->
+                <!-- <div class="card"> -->
+                    <!-- <img src="{{ asset('images/pngegg.png') }}" alt="Wishwajith Shsjs"> -->
+                    <!-- <p>Wishwajith Shsjs</p> -->
+                    <!-- <span>Treasurer</span> -->
+                    <!-- <span>Secretary</span> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="member"> -->
+                <!-- <div class="card"> -->
+                    <!-- <img src="{{ asset('images/pngegg.png') }}" alt="Anupa Gunasekara"> -->
+                    <!-- <p>Anupa Gunasekara</p> -->
+                    <!-- <span>Secretary</span> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
 </div>
 
 

@@ -76,10 +76,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link  custom-navbar-text {{ Request::is('home') ? 'active' : '' }}" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link  custom-navbar-text {{ Request::is('home') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link custom-navbar-text  {{ Request::is('about') ? 'active' : '' }}"  aria-current="" href="{{ url('/home') }}#about">About</a>
+                    <a class="nav-link custom-navbar-text  {{ Request::is('about') ? 'active' : '' }}"  aria-current="" href="{{ url('/') }}#about">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link  custom-navbar-text {{ Request::is('history') ? 'active' : '' }} " aria-current="page" href="/history">History</a>
