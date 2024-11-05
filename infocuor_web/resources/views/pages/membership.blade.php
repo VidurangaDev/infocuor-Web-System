@@ -1,11 +1,11 @@
-@extends('layouts.serviceslayout')
+@extends('layouts.layout01')
 
 
 
 @push('cssstyle')
 {{-- code you css style on the push --}}
 
-    <style>
+<style>
     
     
 /* Hero Section */
@@ -77,17 +77,7 @@
     margin-bottom: 40px;
 }
 
-
-body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+        /* } */
 
         /* Style for the button */
         .btn-apply {
