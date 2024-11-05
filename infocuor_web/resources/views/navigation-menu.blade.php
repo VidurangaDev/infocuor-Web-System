@@ -41,7 +41,7 @@
                 @if(Auth::user()->usertype === 'executive')
                      <!-- Executive Executive Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
-                         {{ __('Executive Dashboard') }}
+                         {{ __('DASHBOARD') }}
                      </x-nav-link>
                     <x-nav-link href="{{ route('bookings.index') }}" class="text-color" :active="request()->routeIs('bookings.index')">
                          {{ __('BOOKINGS') }}
@@ -59,12 +59,13 @@
                 @elseif(Auth::user()->usertype === 'member')
                      <!-- Regular Member Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
-                         {{ __('Member Dashboard') }}
+                         {{ __('Dashboard') }}
                      </x-nav-link>
 
-                     <x-nav-link href="{{ route('userdashboard') }}" :active="request()->routeIs('userdashboard')">
-                         {{ __('Profile') }}
-                     </x-nav-link>
+                     <x-nav-link href="{{ route('documents.index') }}" class="text-color" :active="request()->routeIs('documents.index')">
+                        {{ __('DOCUMENT') }}
+                    </x-nav-link>
+
                      <x-nav-link href="{{ route('member.calender') }}" :active="request()->routeIs('member.calender')">
                         {{ __('CALENDER') }}
                     </x-nav-link>
@@ -72,11 +73,13 @@
                  @else
                      <!-- Regular User Links -->
                      <x-nav-link href="{{ route('userdashboard') }}" class="text-color" :active="request()->routeIs('userdashboard')">
-                         {{ __('USER DASHBOARD') }}
+                         {{ __('DASHBOARD') }}
                      </x-nav-link>
+
                      <x-nav-link href="{{ route('hire') }}" class="text-color" :active="request()->routeIs('hire')">
                          {{ __('HIRE') }}
                      </x-nav-link>
+
                      <!-- <x-nav-link href="{{ route('hire') }}" class="text-color" :active="request()->routeIs('hire')"> -->
                         <!-- {{ __('TRACKER') }} -->
                     <!-- </x-nav-link> -->

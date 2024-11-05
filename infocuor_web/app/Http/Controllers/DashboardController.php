@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function index()
     {
         if(Auth::user()->usertype == 'user'){
-          
+
             return view('admin.dashboard');
 
         }
@@ -28,4 +28,18 @@ class DashboardController extends Controller
         }
 
     }
+
+    // public function dashboard()
+    // {
+
+    //     $userCount = User::count();
+    //     $feedbackCount = Feedback::count();
+    //     $bookingsCount = EventBooking::count();
+
+
+    //     $userCreationProgress = 75;  // Replace with your actual logic
+
+
+    //     return view('admin.dashboard_executive', compact('userCount', 'feedbackCount', 'bookingsCount', 'userCreationProgress'));
+    // }
 }
