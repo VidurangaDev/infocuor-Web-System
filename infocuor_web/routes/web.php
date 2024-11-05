@@ -141,4 +141,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-tracking-status/{id}', [EventBookingController::class, 'updateTrackingStatus'])->name('updateTrackingStatus');
 });
 
+// Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+
 
