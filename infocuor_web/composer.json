@@ -8,12 +8,14 @@
         "php": "^8.2",
         "backpack/crud": "^6.7",
         "backpack/theme-tabler": "^1.2",
+        "barryvdh/laravel-dompdf": "^3.0",
         "laravel/framework": "^11.9",
         "laravel/jetstream": "^5.2",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
-        "maatwebsite/excel": "^3.1"
+        "maatwebsite/excel": "^3.1",
+        "tecnickcom/tcpdf": "^6.7"
     },
     "require-dev": {
         "backpack/generators": "^4.0",
